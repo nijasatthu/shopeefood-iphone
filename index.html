@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f35330"><title>Kho mã của tôi – V6.14</title><meta name="description" content="Quản lý mã giảm giá ShopeeFood trên mọi thiết bị"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Kho mã của tôi"><link rel="apple-touch-icon" href="apple-touch-icon.png"><style>
+:root{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;color:#202736;background:#f5f6fa}*{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit}button{cursor:pointer}header{background:linear-gradient(125deg,#ff653d,#ec4528);color:white;padding:24px 18px 32px}main{max-width:1120px;margin:-18px auto 40px;padding:0 14px}.top{max-width:1120px;margin:auto}.eyebrow{font-size:12px;letter-spacing:2px;font-weight:800;opacity:.85}.top h1{margin:4px 0;font-size:29px}.top p{margin:0;opacity:.9;font-size:14px}.toolbar{display:flex;gap:8px;justify-content:space-between;align-items:center;margin:15px 0;flex-wrap:wrap}.toolbar>div{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid #e6e8ef;background:white;border-radius:11px;padding:10px 14px;font-weight:650;color:#293246}.btn.primary{background:#ee4d2d;color:white;border-color:#ee4d2d}.btn.dark{background:#243047;color:white;border-color:#243047}.btn:disabled{opacity:.45;cursor:not-allowed}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.stat,.panel,.voucher{background:white;border:1px solid #e7e9f0;box-shadow:0 4px 16px #2430470b;border-radius:16px}.stat{padding:16px}.stat b{display:block;font-size:26px;margin-top:5px}.stat small{color:#7e8797}.stat.orange b{color:#ec4b2b}.stat.green b{color:#14865d}.stat.red b{color:#d44949}.panel{margin:16px 0;padding:14px}.filters{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:10px}input,select,textarea{width:100%;border-radius:10px;border:1px solid #dee2eb;padding:11px 12px;background:#fff;outline:none;min-width:0}input:focus,select:focus,textarea:focus{border-color:#f26745;box-shadow:0 0 0 3px #f2674522}label{font-size:13px;font-weight:650;display:block;margin:0 0 6px;color:#455066}.voucher-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.voucher{padding:16px;min-width:0}.vtop{display:flex;justify-content:space-between;gap:8px;align-items:start}.vname{margin:0;font-size:17px;overflow-wrap:anywhere}.vsub{font-size:12px;color:#778092;margin:4px 0}.chip{display:inline-flex;border-radius:100px;padding:5px 9px;background:#ecf9f2;color:#11835e;font-size:11px;font-weight:800;white-space:nowrap}.chip.used{background:#eef0f4;color:#687286}.chip.expired{background:#fff0ee;color:#c3493b}.chip.soon{background:#fff5df;color:#ab7009}.code-row{display:flex;align-items:center;justify-content:space-between;background:#fff6f3;border:1px dashed #ffb09c;border-radius:10px;gap:8px;padding:10px;margin:15px 0}.code{font-size:17px;font-weight:850;letter-spacing:1px;overflow-wrap:anywhere;color:#d94323}.mini{padding:7px 10px;border-radius:8px;background:white;border:1px solid #ebc6bc;font-size:12px;font-weight:700;color:#bf452d;white-space:nowrap}.meta{display:flex;gap:8px;flex-wrap:wrap;color:#687286;font-size:12px;margin-bottom:10px}.note{font-size:13px;color:#596478;white-space:pre-line;overflow-wrap:anywhere}.actions{display:flex;flex-wrap:wrap;gap:7px;padding-top:12px;margin-top:12px;border-top:1px solid #eef0f3}.actions .btn{font-size:12px;padding:8px 10px}.empty{text-align:center;padding:58px 15px;color:#7b8494}.empty strong{color:#283447;display:block;margin-bottom:6px;font-size:18px}.hint{font-size:12px;color:#7f8795;margin-top:10px}dialog{border:0;border-radius:18px;width:min(95vw,550px);padding:0;box-shadow:0 20px 75px #14213d55}dialog::backdrop{background:#19233799}.dlg-head{padding:18px 20px;border-bottom:1px solid #e9ebf0;display:flex;justify-content:space-between;align-items:center}.dlg-head h2{margin:0;font-size:20px}.dlg-body{padding:18px 20px;max-height:70vh;overflow:auto}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.full{grid-column:1/-1}.dlg-actions{display:flex;justify-content:flex-end;gap:8px;padding:14px 20px;border-top:1px solid #e9ebf0}.close{background:transparent;border:0;font-size:25px}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#263347;color:#fff;padding:11px 18px;border-radius:11px;display:none;box-shadow:0 5px 20px #0002;z-index:2;max-width:90vw;text-align:center}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}@media(max-width:670px){.stats{grid-template-columns:repeat(2,1fr)}.filters{grid-template-columns:1fr}.voucher-grid{grid-template-columns:1fr}header{padding-top:19px}.top h1{font-size:25px}.toolbar .btn{padding:9px 11px;font-size:12px}.form-grid{grid-template-columns:1fr}.stat b{font-size:23px}}
+
+/* V5: compact mobile-first layout; prior storage schema and handlers preserved */
+:root{background:#f7f7f9;color:#202632}body{background:#f7f7f9}header{padding:16px 18px 26px;background:linear-gradient(115deg,#f95931,#ed472a)}.top h1{font-size:23px;margin:4px 0 3px;letter-spacing:-.4px}.top p{font-size:12px}.eyebrow{font-size:10px;letter-spacing:1.5px}main{margin:-13px auto 30px;padding:0 12px}.toolbar{display:block;margin:0 0 12px}.toolbar>div.main-tools{display:flex;gap:9px;flex-wrap:nowrap}.toolbar .main-tools .btn{flex:1;padding:12px 9px;font-size:14px;box-shadow:0 2px 8px #0000000b}.toolbar .main-tools .primary{flex:1.2}.toolbar .extra-tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;background:white;border:1px solid #eee;border-radius:13px;padding:10px;margin-top:8px}.toolbar .extra-tools[hidden]{display:none}.extra-tools .btn{font-size:12px;padding:9px 5px}.stats{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.stat{padding:11px 4px;text-align:center;border-radius:12px;box-shadow:none}.stat small{font-size:10px;display:block;line-height:1.4;white-space:normal;min-height:28px}.stat b{font-size:21px;margin-top:3px}.panel{margin:10px 0;padding:11px;border-radius:13px;box-shadow:none}.filters{grid-template-columns:1fr 1fr;gap:8px}.filters>div:first-child{grid-column:1/-1}.filters label{font-size:11px;margin-bottom:4px}.filters input,.filters select{padding:10px 9px;font-size:13px;border-radius:9px}.filter-panel{margin-bottom:12px}.list-heading{display:flex;align-items:center;justify-content:space-between;margin:13px 4px 10px;font-size:15px}.list-heading span{font-size:12px;color:#7a8292}.voucher-grid{grid-template-columns:1fr;gap:9px}.voucher{padding:13px;border-radius:14px;box-shadow:0 2px 10px #24304707}.vname{font-size:16px}.vsub{margin-top:2px}.chip{font-size:10px;padding:5px 8px}.code-row{margin:11px 0;padding:9px 11px;background:#fff8f5;border-color:#ffd0c2}.code{font-size:17px;letter-spacing:.4px}.mini{font-size:12px;padding:8px 12px;background:#ee4d2d;color:white;border:0}.meta{margin-bottom:6px}.actions{margin-top:9px;padding-top:9px}.actions .btn{padding:7px 11px}.toast{bottom:30px}.btn:active,.mini:active{transform:scale(.98)}
+@media(min-width:700px){.voucher-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.stats{gap:12px}.stat{padding:16px}.stat small{min-height:0;font-size:13px}.stat b{font-size:26px}.filters{grid-template-columns:2fr 1fr 1fr 1fr}.filters>div:first-child{grid-column:auto}.toolbar .extra-tools{grid-template-columns:repeat(4,minmax(0,1fr))}}@media(max-width:350px){.stat small{font-size:9px}.stats{gap:4px}.stat b{font-size:19px}.code{font-size:15px}}
+
+/* V6.1: tighter mobile layout */
+header{padding:13px 16px 29px}.top h1{font-size:23px}.top p{font-size:12px}main{padding:0 12px}.toolbar{margin-bottom:10px}.toolbar .main-tools{display:grid;grid-template-columns:1fr 1fr;gap:8px}.toolbar .main-tools .btn{min-width:0;font-size:13px;padding:11px 5px;border-radius:13px}.backup-strip{display:flex;gap:8px;margin:9px 0 12px}.backup-strip .btn{flex:1;font-size:12px;padding:10px 7px}.stats{gap:7px}.stat{padding:10px 3px}.stat small{font-size:10px;min-height:27px}.stat b{font-size:22px}.filter-panel{padding:12px}.filters{grid-template-columns:1fr 1fr}.filters>div:first-child{grid-column:1/-1}.filters .sort-opt{grid-column:1/-1}.filters .sort-opt select{max-width:100%}.voucher{padding:12px 13px}.voucher .vtop{align-items:center}.voucher .vname{font-size:15px}.voucher .vsub{display:none}.voucher .code-row{margin:9px 0 0;padding:8px 10px}.voucher .actions{margin-top:7px;padding-top:7px}.voucher .actions .btn{font-size:12px;padding:7px 11px}.voucher .code{font-size:17px}.hint{line-height:1.45}.backup-note{font-size:11px;color:#7c8593;margin:3px 2px 12px}
+@media(min-width:700px){.toolbar .main-tools{display:flex}.filters .sort-opt{grid-column:auto}}
+
+/* V6.4 compact layout and external quick access */
+.quick-links{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0 12px}.quick-link{border:1px solid #f6c6b7;border-radius:12px;background:#fff;color:#db4c2c;font-weight:750;font-size:13px;padding:12px 6px;min-width:0;box-shadow:0 2px 8px #24304709}.quick-link.food{background:#fff6f2}.quick-link:active{transform:scale(.98)}
+@media(max-width:670px){header{padding-bottom:25px}.toolbar .main-tools .btn{padding:12px 4px}.backup-strip{margin:7px 0}.stats{gap:6px}.stat{padding:8px 2px}.stat small{min-height:0;font-size:10px}.stat b{font-size:21px}.filter-panel{padding:10px}.filters{gap:7px}.voucher{padding:11px 12px}.voucher .code-row{margin:7px 0 0}.voucher .actions{margin-top:6px}.hint{font-size:11px}}
+
+/* V6.5: selection by current filter, accessible batch toolbar, local date/usage tracking */
+.bulk-bar{display:flex;align-items:center;justify-content:space-between;gap:8px;background:#fff;border:1px solid #e9eaf0;border-radius:12px;padding:9px 10px;margin:10px 0 8px;flex-wrap:wrap}
+.bulk-bar .btn{font-size:12px;padding:8px 11px}
+.bulk-select-panel{background:#fff9f6;border:1px solid #f5d9cb;border-radius:12px;padding:10px;margin:0 0 10px}
+.bulk-select-panel[hidden]{display:none}
+.bulk-buttons{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}
+.bulk-buttons .btn{flex:1 0 auto;font-size:12px;padding:9px 8px}
+.bulk-buttons .danger{background:#fff;border-color:#df8a83;color:#b4382d}
+.batch-count{color:#81402d;font-size:12px;font-weight:750}
+.voucher.selected{outline:2px solid #ed6a4e;background:#fffcfa}
+.voucher .vtop{gap:8px}
+.voucher-picker{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:#a83e29;min-width:0;cursor:pointer}
+.voucher-picker input{width:19px;height:19px;accent-color:#ee4d2d;flex-shrink:0;box-shadow:none}
+.voucher-picker[hidden]{display:none}
+.vtop .voucher-heading{min-width:0;flex:1}
+.local-meta{font-size:11px;color:#687286;margin-top:6px;line-height:1.45;overflow-wrap:anywhere}
+.chip.unknown{background:#eef0f5;color:#536176}.chip.exhausted{background:#fff0ee;color:#af4134}
+.hint-verify{padding:9px 10px;background:#fff8e8;border:1px solid #f6e3b4;border-radius:10px;color:#805c25;font-size:11px;line-height:1.45;margin-bottom:9px}
+.dlg-body input[type=date],.dlg-body input[type=number]{min-height:42px}
+@media(max-width:670px){.bulk-bar{margin-top:8px}.bulk-select-panel{padding:9px}.bulk-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.bulk-buttons .btn{min-width:0}.voucher .actions .btn{font-size:11px;padding:8px 9px}.voucher .chip{white-space:normal;text-align:center}.local-meta{font-size:11px}}
+
+/* V6.6: giao diện 1 tay; giữ ID và trình xử lý V6.5 */
+body{background:#f7f8fa}main{padding:0 12px 12px}
+.stats{gap:6px}.stat{padding:9px 3px;border-radius:13px}.stat b{font-size:21px}
+.panel.filter-panel{padding:10px 11px;margin:10px 0 7px}
+.filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.filters>div:first-child{grid-column:1/-1}
+.filters input,.filters select{height:43px;padding:8px 10px}
+.filters label{font-size:11px;margin-bottom:4px}
+.list-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:12px 3px 6px}
+.list-heading-copy{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;min-width:0}
+.list-heading-copy strong{white-space:nowrap}
+.list-heading-copy span{font-size:12px;white-space:nowrap}
+.list-sort{width:46%;max-width:195px;flex-shrink:0}
+.list-sort select{height:38px;padding:7px 24px 7px 9px;font-size:12px;border:1px solid #e4e7ee;background:#fff;border-radius:10px}
+.bulk-bar{display:flex;align-items:center;gap:9px;justify-content:flex-start;flex-wrap:nowrap;margin:0 0 8px;padding:6px 9px;border-radius:11px;box-shadow:none}
+.bulk-bar .btn{font-size:12px;padding:8px 11px;white-space:nowrap;color:#dc4b2e;background:#fff8f5;border-color:#f4c4b6}
+#filterSummary{font-size:11px;color:#7d8592;margin-left:auto;text-align:right}
+.bulk-select-panel{padding:9px 10px 10px;border-radius:11px;margin:0 0 9px}
+.bulk-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:7px}
+.bulk-buttons .btn{min-width:0;font-size:11px;padding:9px 6px;white-space:normal}
+.batch-count{font-size:12px}.copy-tip{font-size:10px;line-height:1.4;color:#805e53;margin:8px 0 0}
+.voucher-grid{gap:8px}.voucher{padding:11px 12px;border-radius:14px}
+.voucher .vtop{display:flex;align-items:center;gap:7px}.voucher .vname{font-size:15px}
+.voucher-picker{font-size:0;gap:0}.voucher-picker input{height:19px;width:19px;margin:0 2px 0 0}
+.voucher .chip{font-size:10px;padding:5px 8px;max-width:47%;line-height:1.3;text-align:center;white-space:normal}
+.voucher .code-row{margin:8px 0 0;padding:8px 9px;gap:6px}
+.voucher .code{font-size:17px;letter-spacing:0;min-width:0}
+.voucher .mini{font-size:11px;padding:8px 10px;border-radius:9px}
+.voucher .local-meta{font-size:11px;line-height:1.4;margin:7px 1px 0}
+.voucher .actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:8px;padding-top:8px}
+.voucher .actions .btn{min-width:0;font-size:11px;line-height:1.25;padding:8px 4px;white-space:normal}
+.voucher .actions:has([data-act="plus"]){grid-template-columns:repeat(4,minmax(0,1fr))}
+.voucher.selected{outline:2px solid #ee704f;outline-offset:-2px}
+@media(min-width:671px){.filters{grid-template-columns:2fr 1fr 1fr}.filters>div:first-child{grid-column:auto}.list-heading{margin-top:15px}.list-sort{width:200px}.voucher .actions .btn{font-size:12px}}
+@media(max-width:360px){.voucher .code{font-size:15px}.voucher .mini{font-size:10px;padding:8px}.voucher .actions .btn{font-size:10px}.list-heading-copy strong{font-size:14px}.list-sort{width:45%}}
+
+/* V6.8: distinct category colors and two independent copy actions */
+.voucher{position:relative;border-left:5px solid var(--cat-ink,#ee4d2d);padding-left:9px;overflow:hidden}
+.voucher .vname{display:inline-flex;align-items:center;gap:5px;min-width:0}
+.category-pill{display:inline-block;padding:6px 10px;border-radius:9px;border:1px solid var(--cat-border,#e6e8ee);background:var(--cat-bg,#f1f3f7);color:var(--cat-ink,#374151);font-weight:850;line-height:1.1;font-size:14px;overflow-wrap:anywhere}
+.voucher .code-row{background:var(--cat-bg,#fff8f5);border:1px solid var(--cat-border,#ffd0c2);margin-top:8px;margin-bottom:0;padding:9px 10px}
+.voucher .code{color:var(--cat-ink,#d94323);font-size:18px}
+.voucher .copy-row{display:grid;grid-template-columns:1fr 1.25fr;gap:7px;margin-top:7px}
+.voucher .copy-row .mini{width:100%;padding:10px 5px;font-size:12px;text-align:center;border-radius:9px}
+.voucher .copy-row .copy-raw{background:var(--cat-ink,#ee4d2d);border:1px solid var(--cat-ink,#ee4d2d);color:white}
+.voucher .copy-row .copy-info{background:white;color:var(--cat-ink,#b94730);border:1px solid var(--cat-border,#efbfae)}
+.voucher .copy-row .mini:active{filter:brightness(.9)}
+.voucher .actions{margin-top:8px}
+.bulk-buttons{grid-template-columns:repeat(2,minmax(0,1fr))}
+.bulk-buttons .btn{min-height:40px}
+#categoryList .category-pill{font-size:12px}
+@media(max-width:359px){.voucher .copy-row .mini{font-size:11px;padding:9px 2px}.category-pill{font-size:12px}}
+
+/* V6.8: neutral categories, status-colored outline and softer interior */
+:root{color:#293243;background:#f6f7f9}
+header{padding:12px 16px 25px}.top h1{font-size:23px}.top p{font-size:12px}
+main{padding:0 11px}.toolbar{margin-bottom:6px}.toolbar .main-tools .btn{padding:10px 4px}
+.backup-strip{margin:6px 0;gap:6px}.backup-strip .btn{padding:8px 4px}
+.quick-links{margin:7px 0 9px;gap:6px}.quick-link{padding:9px 4px;font-size:12px}
+.stats{gap:5px}.stat{padding:8px 2px}.stat b{font-size:20px}.stat small{font-size:10px}
+.panel{margin:9px 0;padding:10px}.filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.filters>div:first-child{grid-column:1/-1}.filters label{font-size:10px;margin-bottom:3px}
+.filters input,.filters select{font-size:11px;padding:9px 5px;min-width:0}
+.filter-panel .list-sort{width:auto;min-width:0}.filter-panel .list-sort label{position:static;width:auto;height:auto;clip-path:none;overflow:visible;font-size:10px;margin-bottom:3px}
+.hint{font-size:10px;line-height:1.4}.list-heading{margin:10px 3px 7px}.bulk-bar{padding:6px 9px;margin:7px 0}.bulk-bar .btn{padding:7px 10px}
+.voucher-grid{gap:8px}.voucher{padding:10px 11px;border:1.5px solid var(--status-border,#cfd5df)!important;border-left:4px solid var(--status-ink,#667085)!important;box-shadow:0 2px 8px #10182808;border-radius:13px}
+.voucher.selected{outline:2px solid #ee704f;outline-offset:-2px}
+.category-pill,.voucher .category-pill{background:#f3f4f6!important;color:#374151!important;border:1px solid #e2e5ea!important;padding:5px 9px;font-size:12px;border-radius:8px}
+.voucher .code-row{background:var(--status-soft,#f4f5f7)!important;border:1px solid var(--status-border,#cfd5df)!important;border-radius:9px;padding:7px 10px;margin:6px 0 0}
+.voucher .code{color:#253044!important;font-size:17px;letter-spacing:.2px}
+.voucher .chip{background:var(--status-soft,#f4f5f7)!important;color:var(--status-ink,#667085)!important;border:1px solid var(--status-border,#cfd5df)!important;font-size:10px;white-space:normal;text-align:center}
+.voucher .copy-row{grid-template-columns:1fr 1.12fr;gap:6px;margin-top:6px}
+.voucher .copy-row .mini{padding:8px 3px;font-size:11px}
+.voucher .copy-row .copy-raw{background:#ee4d2d!important;border:1px solid #ee4d2d!important;color:#fff!important}
+.voucher .copy-row .copy-info{background:white!important;color:#354052!important;border:1px solid #cfd5df!important}
+.voucher .local-meta{font-size:11px;margin-top:5px}
+.voucher .actions{margin-top:6px;padding-top:6px;gap:5px}
+.voucher .actions .btn{padding:7px 3px;font-size:10px}
+#categoryList .category-pill{background:#f3f4f6!important;color:#374151!important;border-color:#e2e5ea!important}
+@media(min-width:700px){.filters{grid-template-columns:2fr repeat(3,minmax(0,1fr))}.filters>div:first-child{grid-column:auto}}
+@media(max-width:360px){.filters select{font-size:10px;padding:8px 2px}.voucher .copy-row .mini{font-size:10px}}
+
+/* V6.9: STATUS palette for outer card + code zone; CATEGORY palette strictly on small pill. */
+body{background:#f6f7f9}
+header{padding:11px 14px 24px}
+.top h1{font-size:23px;line-height:1.15;margin:4px 0 2px}
+.top p{font-size:11px;line-height:1.2}
+.eyebrow{font-size:9.5px;letter-spacing:1.15px}
+main{padding:0 10px;margin-top:-12px}
+.toolbar{margin:0 0 4px}
+.toolbar .main-tools{gap:6px}
+.toolbar .main-tools .btn{min-height:42px;font-size:12px;border-radius:12px;padding:9px 4px}
+.backup-strip{gap:6px;margin:5px 0}
+.backup-strip .btn{padding:8px 3px;min-height:35px;font-size:11px;border-radius:9px}
+.quick-links{gap:6px;margin:5px 0 8px}
+.quick-link{padding:7px 3px;min-height:36px;font-size:11px;border-radius:9px}
+.stats{gap:5px}
+.stat{padding:7px 3px 6px;border-radius:10px;min-height:66px}
+.stat small{font-size:9.5px;line-height:1.2;min-height:23px;display:flex;align-items:center;justify-content:center}
+.stat b{font-size:20px;margin:1px 0 0}
+.panel.filter-panel{padding:9px;margin:8px 0 6px;border-radius:11px}
+.filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.filters>div:first-child{grid-column:1/-1}
+.filters label{font-size:10px;margin-bottom:3px}
+.filters input,.filters select{height:36px;font-size:11px;padding:7px 5px;border-radius:8px}
+#search{height:39px;padding:8px;font-size:12px}
+.filter-panel .list-sort label{font-size:10px}
+.hint{font-size:10px;line-height:1.25}
+.filter-panel+.hint{margin:6px 3px 7px!important}
+.list-heading{margin:9px 3px 6px}
+.list-heading-copy strong{font-size:15px}
+.bulk-bar{margin:0 0 7px;padding:5px 8px;border-radius:10px}
+.bulk-bar .btn{font-size:11px;padding:7px 9px}
+#filterSummary{font-size:10px}
+.bulk-select-panel{padding:8px;margin-bottom:7px}
+.bulk-buttons{gap:5px}
+.bulk-buttons .btn{min-height:34px;font-size:10.5px;padding:7px 3px}
+.voucher-grid{gap:7px}
+/* All main card colors come ONLY from statusStyle() */
+.voucher{
+  border:2px solid var(--status-border,#a6aeba)!important;
+  border-left:4px solid var(--status-border,#a6aeba)!important;
+  background:var(--status-card,#f8f9fb)!important;
+  padding:9px 9px 8px!important;
+  border-radius:12px!important;
+  box-shadow:0 2px 7px rgba(26,35,50,.04)!important;
+}
+.voucher.selected{outline:2px solid #f26848;outline-offset:1px}
+.voucher .vtop{display:flex;align-items:center;gap:5px;min-height:26px;justify-content:space-between}
+.voucher .voucher-heading{min-width:0;flex:1}
+.voucher .vname{margin:0;font-size:12px;line-height:1.15}
+/* Small category label is the ONLY place where per-category colors show */
+.voucher .category-pill,#categoryList .category-pill{
+  display:inline-block;
+  padding:5px 8px!important;
+  max-width:100%;
+  border:1px solid var(--cat-border,#dce1e8)!important;
+  background:var(--cat-bg,#f2f4f6)!important;
+  color:var(--cat-ink,#364152)!important;
+  font-size:11px!important;
+  font-weight:850;
+  line-height:1.15;
+  border-radius:7px!important;
+  overflow-wrap:anywhere;
+}
+.voucher .chip{
+  border:1px solid var(--status-border,#a6aeba)!important;
+  background:var(--status-soft,#f0f2f5)!important;
+  color:var(--status-ink,#5f6878)!important;
+  padding:4px 7px;font-size:10px;line-height:1.18;
+  white-space:normal;text-align:right;border-radius:7px;
+  max-width:61%; flex-shrink:0;
+}
+.voucher .code-row{
+  background:var(--status-soft,#f0f2f5)!important;
+  border:1px solid var(--status-border,#a6aeba)!important;
+  border-radius:8px!important;
+  min-height:39px;
+  margin:6px 0 0!important;
+  padding:7px 9px!important;
+}
+.voucher .code{color:#283242!important;font-size:17px!important;font-weight:850;letter-spacing:0}
+.voucher .local-meta{font-size:10px!important;line-height:1.25;margin:5px 1px 0!important;color:#677284}
+.voucher .copy-row{grid-template-columns:1fr 1.2fr;gap:6px;margin-top:6px}
+.voucher .copy-row .mini{min-height:35px;font-size:11px!important;line-height:1.15;padding:7px 3px!important;border-radius:8px}
+.voucher .copy-row .copy-raw{color:#fff!important;background:#ee4d2d!important;border-color:#ee4d2d!important}
+.voucher .copy-row .copy-info{color:#303b4d!important;background:white!important;border-color:#cdd3dc!important}
+.voucher .actions{margin-top:6px!important;padding-top:6px!important;gap:5px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.voucher .actions:has([data-act="plus"]){grid-template-columns:repeat(4,minmax(0,1fr))}
+.voucher .actions .btn{min-height:33px;font-size:10px!important;line-height:1.1;padding:7px 2px!important;border-radius:8px;white-space:normal}
+.voucher .actions [data-act="delete"]{color:#b93737;border-color:#efd0d0;background:#fffafa}
+.voucher-picker input{accent-color:#ee4d2d}
+@media(min-width:700px){
+ .voucher-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .filters{grid-template-columns:2fr 1fr 1fr 1fr}
+ .filters>div:first-child{grid-column:auto}
+ .stat{min-height:80px}
+}
+@media(max-width:350px){
+ .voucher .chip{font-size:9px;max-width:58%}
+ .voucher .category-pill{font-size:10px!important;padding:4px 6px!important}
+ .voucher .copy-row .mini{font-size:10px!important}
+ .voucher .actions .btn{font-size:9px!important}
+ .filters select{font-size:10px;padding:6px 2px}
+}
+
+/* V6.10: compact cards, time moved to top, no direct limit button */
+.filters{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.filters>div:first-child{grid-column:1/-1}.filters .list-sort label.sr{position:static;width:auto;height:auto;clip-path:none;overflow:visible;margin:0 0 6px;font-size:11px;font-weight:650;color:#455066}.filters .list-sort{width:auto}.filters input,.filters select{height:42px;padding:8px 10px}.list-heading{margin:10px 2px 8px}.bulk-bar{margin:6px 0}.voucher{padding:10px 10px 11px;border-radius:15px;border-width:1.5px;background:var(--status-card,#fff)}.voucher .time-row{display:flex;justify-content:flex-end;margin-bottom:6px}.voucher .time-pill{display:inline-flex;align-items:center;justify-content:center;padding:4px 9px;border-radius:999px;border:1px solid var(--status-border,#d3d8e0);background:var(--status-soft,#f2f4f7);color:var(--status-ink,#4f5968);font-size:11px;font-weight:800;line-height:1.2;text-align:center}.voucher .vtop{align-items:center;gap:7px}.voucher .vname{margin:0;display:flex}.voucher .category-pill{padding:5px 10px;font-size:13px;border-radius:10px}.voucher .chip{padding:5px 9px;font-size:10px;line-height:1.1}.voucher .code-row{margin-top:7px;padding:8px 10px;border-radius:11px;background:var(--status-soft,#f5f6f8)}.voucher .code{font-size:15px;letter-spacing:.2px}.voucher .copy-row{grid-template-columns:1fr 1fr;gap:6px;margin-top:6px}.voucher .copy-row .mini{padding:9px 4px;font-size:12px;border-radius:10px}.voucher .local-meta{display:none}.voucher .actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:7px;padding-top:0;border-top:0}.voucher .actions .btn{min-width:0;padding:8px 4px;font-size:12px;border-radius:10px}.voucher .actions .btn[data-act="delete"]{color:#b93d33;border-color:#e7b0aa;background:#fff9f8}.voucher .actions .btn[data-act="edit"]{color:#32465c}.voucher-picker{font-size:11px}.voucher-picker input{width:18px;height:18px}.chip.used{background:#eaf8f1;color:#147953}.chip.expired,.chip.exhausted{background:#fff0ee;color:#b83c38}.chip.active,.chip.soon,.chip.unknown{background:#f2f4f7;color:#5f6878}@media(max-width:670px){main{padding:0 10px 12px}.toolbar .main-tools .btn,.backup-strip .btn,.quick-link{min-height:40px}.stats{gap:6px}.stat{padding:8px 3px}.stat small{font-size:10px}.stat b{font-size:20px}.panel.filter-panel{padding:10px}.list-heading-copy strong{font-size:16px}.bulk-buttons{grid-template-columns:repeat(2,minmax(0,1fr))}.voucher .chip{max-width:44%;text-align:center}.voucher .code{font-size:16px}}@media(max-width:380px){.filters{grid-template-columns:1fr 1fr}.filters .list-sort{grid-column:1/-1}.voucher .copy-row .mini,.voucher .actions .btn{font-size:11px}.voucher .category-pill{font-size:12px;padding:5px 8px}.voucher .time-pill{font-size:10px;padding:4px 8px}}
+
+/* V6.11: single header row, maximum density */
+.voucher{padding:8px 9px!important;border-radius:13px!important}.voucher .vtop{display:flex;align-items:center;gap:5px;flex-wrap:nowrap;min-width:0}.voucher .voucher-heading{flex:0 0 auto;min-width:0}.voucher .category-pill{padding:5px 7px!important;font-size:11px!important;white-space:nowrap}.voucher .time-pill{flex:0 1 auto;min-width:0;white-space:nowrap;padding:5px 6px;border:1px solid var(--status-border);border-radius:8px;background:var(--status-soft);color:var(--status-ink);font-size:10px;line-height:1.1;font-weight:800;text-align:center}.voucher .chip{flex:0 1 auto;min-width:0;max-width:none!important;white-space:normal;font-size:10px!important;padding:5px 6px;border-radius:8px;line-height:1.1;text-align:center;overflow-wrap:anywhere}.voucher .code-row{margin-top:6px!important;padding:7px 9px!important;border-radius:9px!important}.voucher .code{font-size:17px!important}.voucher .copy-row{margin-top:5px!important;gap:5px}.voucher .copy-row .mini{padding:7px 3px!important;font-size:11px!important;border-radius:8px!important;min-height:35px}.voucher .actions{margin-top:5px!important;gap:5px!important}.voucher .actions .btn{padding:6px 2px!important;min-height:33px;font-size:11px!important;border-radius:8px!important}.voucher-grid{gap:8px!important}.bulk-bar{padding:7px 9px!important}.bulk-bar .btn{padding:7px 10px!important}.list-heading{margin:7px 2px!important}.panel.filter-panel{padding:8px!important}.filters{gap:5px!important}.filters select,.filters input{height:37px!important;padding:5px 7px!important;font-size:11px!important}.filters label{font-size:10px!important;margin-bottom:4px!important}.hint{line-height:1.3}.status-editor{margin-top:12px;padding:10px;border:1px solid #e0e4ec;border-radius:10px}.status-add{display:flex;gap:6px;margin-top:8px}.status-add input{flex:1}.status-add button{flex:0 0 auto}.status-tag{display:inline-flex;align-items:center;gap:4px;background:#edf2f8;border-radius:8px;padding:4px 6px;margin:6px 4px 0 0;font-size:12px}.status-tag button{border:0;background:transparent;font-size:19px;color:#a13b35}.chip.custom{background:#eaf2fa;color:#416087}@media(max-width:380px){.voucher .time-pill,.voucher .chip{font-size:9px!important;padding:4px!important}.voucher .category-pill{font-size:10px!important;padding:4px 5px!important}.voucher .copy-row .mini{font-size:10px!important}}
+
+/* V6.12: independent optional status in same row as category/date/expiry */
+.voucher .vtop{display:flex!important;align-items:center!important;gap:4px!important;justify-content:space-between!important;flex-wrap:nowrap!important;min-width:0}.voucher .voucher-heading{flex:0 0 auto!important}.voucher .time-pill{flex:0 1 auto!important;white-space:nowrap!important;font-size:9px!important;padding:4px 3px!important}.voucher .category-pill{font-size:10px!important;padding:4px 5px!important}.voucher .manual-chip{display:inline-flex;flex:0 1 auto;align-items:center;justify-content:center;min-width:0;max-width:24%;padding:4px 5px;border:1px solid #96a4bc;border-radius:7px;background:#f2f5fb;color:#40536c;font-size:9px;font-weight:800;line-height:1.1;text-align:center;overflow-wrap:anywhere}.voucher .chip{flex:0 1 auto!important;max-width:33%!important;font-size:9px!important;padding:4px 4px!important;line-height:1.1!important}.voucher .code-row{margin-top:5px!important}.voucher .copy-row{margin-top:5px!important}.voucher .actions{margin-top:4px!important}.voucher{padding:7px 8px!important}@media(max-width:365px){.voucher .category-pill,.voucher .time-pill,.voucher .manual-chip,.voucher .chip{font-size:8px!important;padding:3px!important}}
+
+/* V6.13: compact supervised voucher checking; separate from local and custom statuses */
+.voucher .actions{grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}
+.voucher .actions .btn{font-size:11px;padding:8px 2px;min-height:36px}
+.voucher .actions .btn[data-act="check"]{background:#fff5eb;border-color:#f1bfaa;color:#ad482f}
+.check-record{display:flex;align-items:center;gap:5px;margin:7px 0 0;flex-wrap:wrap;font-size:10px;color:#566174}
+.check-tag{display:inline-flex;border:1px solid #cad3dc;border-radius:8px;padding:3px 7px;background:#f5f7fa;color:#55606d;font-weight:750}
+.check-tag.applied{color:#0b7957;border-color:#98ceba;background:#edfaf4}
+.check-tag.exhausted,.check-tag.invalid_or_expired{color:#bb413c;border-color:#ecb0ab;background:#fff2f0}
+.check-tag.conditions{color:#966018;border-color:#e8d09e;background:#fff8ea}
+.check-tag.uncertain{color:#586779;border-color:#c4ccd9;background:#f4f5f8}
+.check-resume{display:flex;align-items:center;justify-content:space-between;gap:8px;border:1px solid #efc0aa;background:#fff8f4;border-radius:13px;padding:8px 10px;margin:7px 0;font-size:12px}
+.check-resume[hidden]{display:none!important}
+.check-resume .btn{padding:7px 10px;font-size:11px}
+#checkDialog .dlg-body{padding:12px 16px;max-height:72vh}
+#checkDialog .dlg-head{padding:13px 16px}
+#checkDialog .dlg-head h2{font-size:18px}
+.check-counter{font-size:12px;color:#747e8f;font-weight:750}
+.check-code-box{border:1px solid #f0c3b6;background:#fff8f5;border-radius:12px;padding:10px 12px;margin:8px 0}
+.check-code-box strong{display:block;font-size:23px;overflow-wrap:anywhere;color:#d3452a}
+.check-code-box small{display:block;color:#576175;margin-top:3px}
+.check-help{border-left:3px solid #ee6c47;background:#f8f9fc;border-radius:8px;padding:9px 10px;font-size:12px;color:#4c5667;line-height:1.5}
+.check-actions{display:grid;grid-template-columns:1.35fr 1fr;gap:7px;margin:10px 0}
+.check-actions .btn{font-size:12px;padding:10px 5px;min-width:0}
+.check-checklist{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:7px 0 10px}
+.check-checklist label{font-size:12px;margin:0}
+.check-checklist select,.check-checklist input{padding:9px 8px;font-size:13px}
+.check-checklist .full{grid-column:1/-1}
+#checkNote{font-size:12px;min-height:50px;resize:vertical}
+.check-history{color:#566174;font-size:11px;line-height:1.45;margin-top:8px;max-height:70px;overflow:auto}
+.check-session-footer{display:grid;grid-template-columns:1fr 1fr 1.45fr;gap:7px;padding:10px 16px;border-top:1px solid #edf0f3}
+.check-session-footer .btn{padding:9px 5px;font-size:12px}
+@media(max-width:390px){.voucher .actions .btn{font-size:10px;padding:8px 1px}.check-actions .btn{font-size:11px}.check-session-footer .btn{font-size:11px}}
+
+/* V6.14 — polished, compact 4-tab UI matching the approved reference. */
+:root{--brand:#f04c2c;--brand-dark:#db3b22;--line:#dfe5ec;--ink:#233044;--muted:#7b8798;background:#f7f9fc;color:var(--ink)}
+*{-webkit-tap-highlight-color:transparent}
+html{background:#f7f9fc}body{background:#f7f9fc;min-height:100vh;color:var(--ink);padding-bottom:83px;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #ec6447;outline-offset:1px}
+button,select{touch-action:manipulation}
+[hidden]{display:none!important}
+.app-header{background:linear-gradient(125deg,#ff6038,#f14e2e 70%,#ed472e);color:#fff;padding:13px 14px 43px;position:relative}
+.top-app{display:flex;align-items:center;gap:11px;min-height:62px}
+.header-logo{width:55px;height:55px;flex:none;border-radius:15px;object-fit:cover;border:1.5px solid #fff8;box-shadow:0 3px 8px #951c1230}
+.brand-copy{min-width:0;flex:1}
+.brand-copy h1{font-size:24px;line-height:1.06;letter-spacing:-.6px;margin:0 0 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:840}
+.brand-copy .eyebrow{font-size:10px!important;letter-spacing:.5px;font-weight:750;opacity:.9;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.header-controls{display:flex;align-items:center;gap:4px}
+.header-icon{display:grid;place-items:center;background:transparent;border:0;color:#fff;padding:6px;min-width:30px;min-height:32px}
+.header-icon svg{width:24px;height:24px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round}
+#menuToggle svg{stroke-width:0;fill:currentColor}
+.header-dropdown{position:absolute;z-index:20;right:12px;top:71px;width:min(245px,82vw);background:#fff;color:#253044;box-shadow:0 12px 30px #28283b40;border:1px solid #eee;border-radius:14px;overflow:hidden;padding:4px}
+.header-dropdown button{width:100%;border:0;background:#fff;text-align:left;color:#253044;padding:12px 14px;font-weight:650;border-radius:9px}
+.header-dropdown button:active{background:#fff4ef}
+main.app-main{max-width:1000px;margin:-30px auto 0;padding:0 12px 20px;position:relative;z-index:1}
+main.app-main.subview-open{margin-top:0}
+.screen{min-width:0;animation:tabAppear .14s ease-in}
+@keyframes tabAppear{from{opacity:.7}to{opacity:1}}
+.app-main .quick-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0 0 11px}
+.app-main .quick-link{min-width:0;min-height:43px;padding:8px 5px;border:1px solid #ffb7a5;border-radius:14px;background:#fff9f7;color:#e95031;font-size:12px;font-weight:800;box-shadow:0 2px 6px #2222220b}
+.app-main .quick-link.food{background:#fff3ef}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:0 0 11px}
+.stat{position:relative;min-height:75px;box-shadow:0 2px 8px #1d27400b;border:1px solid var(--line);border-radius:13px;text-align:left;padding:10px 7px 9px;background:#fff}
+.stat small{display:block;color:#6c7687;font-size:10px;line-height:1.25;min-height:27px;white-space:normal;margin:0}
+.stat b{display:block;font-size:24px;line-height:1.1;margin-top:4px;color:#2e3a4c;font-weight:800}
+.stat.orange b{color:#f04a2c}.stat.green b{color:#16936b}.stat.red b{color:#de3542}
+.stat .stat-mark{position:absolute;right:7px;bottom:8px;display:grid;place-items:center;border-radius:100px;background:#f0f2f6;color:#596577;font-size:16px;width:21px;height:21px;opacity:.86}
+.stat.orange .stat-mark{background:#fff0e9;color:#f04a2c}.stat.green .stat-mark{background:#e8f8f1;color:#16936b}.stat.red .stat-mark{background:#fff0f0;color:#de3542}
+.filter-panel{background:transparent!important;border:none!important;box-shadow:none!important;padding:0!important;margin:0 0 13px!important}
+.filters{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important}
+.filters>div:first-child{grid-column:1/-1!important}
+.filters .list-sort{width:auto!important;max-width:none!important;grid-column:auto!important}
+.filters input,.filters select{height:42px!important;min-height:42px!important;border-radius:11px!important;border:1px solid #d7dfe9!important;background:#fff!important;color:#283246!important;box-shadow:none!important;font-size:12px!important;padding:8px 8px!important;max-width:none!important;width:100%!important}
+.filters input{font-size:14px!important;padding:8px 11px!important}
+.filters .list-sort select{font-size:11px!important;padding:6px 2px!important}
+.filters select{padding-right:15px!important;text-overflow:ellipsis}
+.filters label,.filters .list-sort label.sr{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.list-heading{display:flex;align-items:center;justify-content:space-between;margin:6px 2px 8px!important;gap:6px;min-height:38px}
+.list-heading-copy{display:flex;align-items:baseline;gap:8px;flex-wrap:nowrap;min-width:0}
+.list-heading-copy strong{font-size:17px!important;font-weight:850;white-space:nowrap}
+.list-heading-copy span{font-size:12px;white-space:nowrap;color:#8792a3}
+.list-tools{display:flex;gap:6px;align-items:center;min-width:0}
+.list-tools .btn{min-height:36px;padding:7px 10px!important;border:1px solid #ffbdab;background:#fff8f4;color:#ed4e2f;font-size:11px!important;white-space:nowrap;border-radius:11px}
+.list-tools .options-btn{font-size:20px!important;font-weight:700;border:1px solid #dce3eb;color:#536277;background:#fff;width:37px;padding:0!important}
+#filterSummary{display:none!important}
+.bulk-select-panel{box-shadow:none;border-radius:12px;margin:0 0 9px}
+.check-resume{margin:0 0 9px}
+.voucher-grid{gap:8px!important;grid-template-columns:1fr}
+.voucher{position:relative!important;border:1.8px solid var(--status-border,#b7c1ce)!important;border-left:1.8px solid var(--status-border,#b7c1ce)!important;border-radius:15px!important;background:var(--status-card,#f7f9fc)!important;box-shadow:0 2px 7px #1727400e!important;padding:10px!important;overflow:hidden}
+.voucher.selected{outline:2px solid #f2603f;outline-offset:1px}
+.voucher .vtop{display:flex!important;align-items:center!important;gap:5px!important;justify-content:space-between!important;margin:0!important;min-width:0}
+.voucher .voucher-heading{flex:0 1 auto!important;max-width:33%!important;min-width:0}
+.voucher .vname{display:block!important;margin:0!important;font-size:13px!important}
+.voucher .category-pill{font-size:11px!important;font-weight:800;padding:5px 7px!important;border-radius:9px!important;max-width:100%;white-space:nowrap!important;overflow:hidden;text-overflow:ellipsis}
+.voucher .time-pill{flex:0 1 auto!important;font-size:10px!important;font-weight:700!important;padding:5px 6px!important;white-space:normal!important;line-height:1.1!important;color:var(--status-ink,#536176);background:var(--status-soft,#f1f3f6);border:1px solid var(--status-border,#bac5d1);border-radius:9px;max-width:40%;overflow-wrap:anywhere}
+.voucher .manual-chip{flex:0 1 auto!important;max-width:28%;font-size:10px!important;background:#eef4fa;border-color:#c3d0e2;color:#34516c;padding:5px 6px!important;border-radius:9px}
+.voucher .chip{flex:0 1 auto!important;max-width:39%!important;line-height:1.1!important;font-size:10px!important;padding:5px 6px!important;border-radius:9px!important;color:var(--status-ink)!important;border:1px solid var(--status-border)!important;background:var(--status-soft)!important;overflow-wrap:anywhere}
+.voucher .code-row{display:flex;align-items:center;justify-content:space-between;min-height:40px;margin:7px 0 0!important;padding:6px 9px!important;gap:5px;border-radius:10px!important;background:var(--status-soft,#eef2f5)!important;border:1px solid var(--status-border,#c7ced9)!important}
+.voucher .code{font-size:20px!important;color:#222d3e!important;font-weight:850;overflow-wrap:anywhere;min-width:0;letter-spacing:0!important}
+.copy-icon{display:grid;place-items:center;background:transparent;border:0;color:#718096;font-size:25px;line-height:1;padding:3px 8px;flex:none}
+.voucher .copy-row{grid-template-columns:1fr 1fr!important;gap:6px!important;margin-top:6px!important}
+.voucher .copy-row .mini{min-height:37px;padding:8px 4px!important;font-size:12px!important;border-radius:9px!important;font-weight:780}
+.voucher .copy-row .copy-raw{background:#f24a2a!important;color:#fff!important;border:1px solid #f24a2a!important}
+.voucher .copy-row .copy-info{border:1px solid #d2d9e3!important;background:#fff!important;color:#273449!important}
+.voucher .actions{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:5px!important;margin-top:6px!important;padding:0!important;border:none!important}
+.voucher .actions .btn{width:100%;min-width:0!important;font-size:10px!important;padding:7px 2px!important;min-height:34px!important;white-space:normal;line-height:1.12!important;border:1px solid #d9e0e8;background:#fff;border-radius:9px!important;color:#25364b}
+.voucher .actions .btn[data-act="check"]{border:1px solid #ffb7a4;background:#fff7f3;color:#df4c2e;font-weight:750}
+.voucher .actions .btn[data-act="delete"]{border-color:#f0aaaa;background:#fff9f9;color:#bb302f}
+.check-record{font-size:10px;margin:5px 0 0}
+.end-note{font-size:10px;color:#96a1b0;text-align:center;line-height:1.5;padding:7px 10px}
+.app-bottom-nav{position:fixed!important;z-index:30!important;bottom:0;left:0;right:0;min-height:69px;display:grid;grid-template-columns:repeat(4,1fr);align-items:stretch;gap:1px;background:#fff;border-top:1px solid #e6eaf0;box-shadow:0 -4px 14px #2230470b;padding:6px 7px max(5px,env(safe-area-inset-bottom));border-radius:17px 17px 0 0}
+.nav-button{border:0;background:transparent;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;position:relative;color:#8b96a6;font-size:11px;font-weight:650;min-width:0;padding:3px 0 6px}
+.nav-button svg{height:22px;width:22px;flex:none;stroke:currentColor}
+.nav-button.active{color:#f04b2c;font-weight:800}
+.nav-button.active:after{content:"";position:absolute;bottom:-3px;left:20%;width:60%;height:3px;background:#f04b2c;border-radius:5px}
+.screen:not(#viewHome){padding-top:4px}
+.sub-title{margin:13px 0 14px}
+.sub-title h2{font-size:22px;margin:0 0 3px;font-weight:850;letter-spacing:-.4px}
+.sub-title p{margin:0;color:#7b8798;font-size:12px}
+.tool-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.utility-card{background:#fff;border:1px solid #dfe5ec;border-radius:15px;padding:13px 10px;display:flex;flex-direction:column;text-align:left;gap:7px;color:#293346;min-height:133px}
+.utility-card.strong-card{border-color:#f5ae98;background:#fff4ee}
+.utility-card b{font-size:16px}.utility-card small{font-size:11px;color:#758094;line-height:1.4}
+.tool-emoji{font-size:24px}
+.utility-heading{font-size:16px;margin:22px 0 10px}
+.app-main .quick-tools{margin-top:0}
+.info-panel,.section-surface{background:#fff;border:1px solid #e2e7ee;border-radius:15px;padding:15px;margin-top:12px}
+.info-panel p,.small-muted{font-size:12px;color:#778496;line-height:1.6;margin:7px 0 11px}
+.info-panel .btn{font-size:12px}
+.section-surface h3{margin:0 0 12px;font-size:15px}
+.section-surface .backup-strip{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0 0;background:transparent;border:0;padding:0}
+.section-surface .backup-strip .btn{width:100%;min-height:44px;background:#fff8f4;color:#ec4c2f;border-color:#f2c4b6;border-radius:11px;font-size:12px}
+.settings-row{display:flex;align-items:center;justify-content:space-between;width:100%;padding:13px 3px;border:0;border-bottom:1px solid #eef1f5;background:transparent;color:#273246;font-weight:700;font-size:13px;text-align:left}
+.settings-row span:last-child{font-size:23px;color:#9ba6b5;line-height:1}
+#categoryStatistics,#checkStatistics{display:grid;gap:12px}
+.analytic-line{display:grid;gap:6px;font-size:12px}
+.analytic-head{display:flex;justify-content:space-between;font-weight:650}
+.analytic-track{width:100%;height:7px;background:#f0f3f7;border-radius:10px;overflow:hidden}
+.analytic-fill{height:100%;background:linear-gradient(90deg,#fe6a42,#ed4a2b);border-radius:10px}
+#viewStats .stats{margin-top:12px}
+#viewStats .stat small{min-height:27px}
+@media(max-width:670px){.app-header{padding:12px 12px 42px}.top-app{gap:9px}.header-logo{width:52px;height:52px}.brand-copy h1{font-size:22px}.brand-copy .eyebrow{font-size:10px!important}.header-icon svg{height:21px;width:21px}main.app-main{margin-top:-31px;padding:0 10px 22px}.quick-link{font-size:11px!important}.stats{gap:5px}.stat{min-height:70px;padding:8px 6px}.stat b{font-size:22px}.stat small{font-size:9px;min-height:27px}.stat .stat-mark{font-size:13px;width:18px;height:18px;bottom:7px;right:5px}.list-heading-copy strong{font-size:16px!important}.voucher-grid{gap:7px!important}.voucher{padding:9px!important}.voucher .copy-row .mini{font-size:11px!important}.voucher .actions .btn{font-size:10px!important}}
+@media(max-width:350px){.brand-copy h1{font-size:19px}.brand-copy .eyebrow{font-size:9px!important}.header-logo{width:47px;height:47px}.header-controls{gap:0}.header-icon{min-width:23px;padding:3px}.stat{padding:7px 4px}.stat small{font-size:8px}.stat b{font-size:20px}.stat-mark{display:none!important}.filters select{font-size:10px!important;padding:5px!important}.list-heading-copy strong{font-size:15px!important}.list-heading-copy span{font-size:11px}.list-tools .btn{font-size:10px!important;padding:6px!important}.voucher .time-pill,.voucher .chip,.voucher .manual-chip{font-size:9px!important;padding:3px!important}.voucher .actions .btn{font-size:9px!important}.nav-button{font-size:10px}}
+@media(min-width:750px){main.app-main{max-width:850px}.voucher-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.stat{min-height:90px;padding:15px}.stat small{font-size:13px;min-height:18px}.stat b{font-size:29px}.stat-mark{width:28px!important;height:28px!important;font-size:20px!important}.filters input,.filters select{height:46px!important}}
+
+
+/* iOS home-screen standalone refinements */
+@supports (padding: max(0px)) {
+ body{padding-bottom:env(safe-area-inset-bottom,0px)}
+ .bottom-nav{padding-bottom:max(5px, env(safe-area-inset-bottom,0px))}
+}
+@media(max-width:670px){input,select,textarea{font-size:16px}dialog input,dialog select,dialog textarea{font-size:16px}}
+</style></head><body>
+<header class="app-header">
+  <div class="top top-app">
+    <img class="header-logo" src="logo.png" alt="Biểu tượng Kho mã" width="58" height="58">
+    <div class="brand-copy"><h1>Kho mã của tôi</h1><p class="eyebrow">SHOPEEFOOD · V6.14 · iPhone</p></div>
+    <div class="header-controls"><button type="button" class="header-icon" id="goSearch" aria-label="Tìm kiếm"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.6"/><path d="m15.4 15.4 5 5"/></svg></button><button type="button" class="header-icon" id="menuToggle" aria-label="Mở menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg></button></div>
+  </div>
+  <div class="header-dropdown" id="headerDropdown" hidden>
+    <button type="button" data-action="paste">📋 Dán mã mới</button>
+    <button type="button" data-action="category">☰ Phân loại mã</button>
+    <button type="button" data-action="backup">⬇ Xuất backup</button>
+    <button type="button" data-action="settings">⚙ Cài đặt</button>
+  </div>
+</header>
+<main class="app-main">
+ <section class="screen active-screen" id="viewHome" data-view="home">
+   <nav class="quick-links" aria-label="Mở ứng dụng mua hàng"><button type="button" class="quick-link" data-shop="shopee">🛍️ Mở Shopee ↗</button><button type="button" class="quick-link food" data-shop="food">🍜 Mở ShopeeFood ↗</button></nav>
+   <div class="stats" id="stats"></div>
+   <section class="filter-panel" aria-label="Tìm kiếm và lọc mã"><div class="filters">
+     <div class="search-opt"><label for="search" class="sr">Tìm theo mã, tên, ghi chú</label><input id="search" type="search" placeholder="⌕  Tìm mã, tên, tài khoản..."></div>
+     <div class="filter-opt"><label for="categoryFilter" class="sr">Loại mã</label><select id="categoryFilter" aria-label="Loại mã"></select></div>
+     <div class="filter-opt"><label for="filter" class="sr">Trạng thái</label><select id="filter" aria-label="Trạng thái"><option value="all">Tất cả</option><option value="active">Còn lại</option><option value="soon">Sắp hết hạn (3 ngày)</option><option value="used">Đã dùng</option><option value="expired">Hết hạn theo ngày</option><option value="exhausted">Hết lượt đã ghi nhận</option><option value="unknown">Chưa rõ thời gian</option></select></div>
+     <div class="list-sort"><label for="sort" class="sr">Sắp xếp mã</label><select id="sort" aria-label="Sắp xếp mã"><option value="expiry">Hạn gần nhất</option><option value="newest">Mới thêm</option><option value="name">Tên A → Z</option></select></div>
+   </div></section>
+   <div class="list-heading"><div class="list-heading-copy"><strong>Danh sách mã</strong><span id="resultCount"></span></div><div class="list-tools"><button type="button" class="btn" id="selectionMode" aria-expanded="false">☑ Chọn nhiều</button><button type="button" class="btn options-btn" id="listActions" aria-label="Mở tiện ích quản lý mã">☷</button></div></div>
+   <span class="sr" id="filterSummary">Thao tác theo bộ lọc hiện tại</span>
+   <div class="bulk-select-panel" id="bulkPanel" hidden><div class="batch-count" id="batchCount" aria-live="polite">Đã chọn 0 mã</div><div class="bulk-buttons"><button class="btn" type="button" id="selectAll">☑ Chọn tất cả</button><button class="btn" type="button" id="clearAll">☐ Bỏ chọn tất cả</button><button class="btn dark" type="button" id="copySelected">📋 Copy mã</button><button class="btn" type="button" id="copyInfoSelected">📄 Copy thông tin</button><button class="btn" type="button" id="checkSelected">🔎 Kiểm tra đã chọn</button><button class="btn danger" type="button" id="deleteSelected">🗑 Xóa đã chọn</button></div><p class="copy-tip">Copy mã: chỉ mã • Copy thông tin: phân loại - mã - hạn.</p></div>
+   <div class="check-resume" id="checkResume" hidden><span id="checkResumeSummary">Đang kiểm tra voucher</span><button type="button" class="btn" id="checkResumeBtn">▶ Tiếp tục</button><button type="button" class="btn" id="checkEndBtn">✕ Hủy đợt</button></div>
+   <div id="list" class="voucher-grid" aria-live="polite"></div>
+   <p class="end-note">Dữ liệu chỉ lưu trên thiết bị · Kiểm tra mã cần xác nhận trong ShopeeFood</p>
+ </section>
+ <section class="screen" id="viewTools" data-view="tools" hidden>
+   <div class="sub-title"><h2>Tiện ích</h2><p>Thêm mã và mở ứng dụng mua hàng nhanh chóng</p></div>
+   <div class="tool-cards">
+     <button class="utility-card strong-card" type="button" id="pasteBtn"><span class="tool-emoji">📋</span><b>Dán mã</b><small>Nhập nhiều mã cùng phân loại</small></button>
+     <button class="utility-card" type="button" id="categoryBtn"><span class="tool-emoji">🏷️</span><b>Phân loại mã</b><small>Thêm, xóa và quản lý loại mã</small></button>
+   </div>
+   <h3 class="utility-heading">Mở nhanh</h3>
+   <nav class="quick-links quick-tools" aria-label="Mở ứng dụng mua hàng"><button type="button" class="quick-link" data-shop="shopee">🛍️ Mở Shopee ↗</button><button type="button" class="quick-link food" data-shop="food">🍜 Mở ShopeeFood ↗</button></nav>
+   <div class="info-panel"><b>🔎 Kiểm tra voucher</b><p>Trong Kho mã, bấm <b>Kiểm tra</b> để sao chép mã, mở ShopeeFood và lưu kết quả bạn quan sát. Ứng dụng không tự đọc màn hình ShopeeFood.</p><button class="btn" data-go="home" type="button">Đến Kho mã →</button></div>
+ </section>
+ <section class="screen" id="viewStats" data-view="stats" hidden>
+   <div class="sub-title"><h2>Thống kê</h2><p>Tổng quan mã lưu trên điện thoại</p></div>
+   <div id="statOverview" class="stats"></div>
+   <div class="section-surface"><h3>Mã theo phân loại</h3><div id="categoryStatistics"></div></div>
+   <div class="section-surface"><h3>Kết quả kiểm tra đã ghi nhận</h3><div id="checkStatistics"></div></div>
+   <p class="small-muted">Số liệu dựa trên thông tin bạn nhập, không kết nối API ShopeeFood.</p>
+ </section>
+ <section class="screen" id="viewSettings" data-view="settings" hidden>
+   <div class="sub-title"><h2>Cài đặt</h2><p>Sao lưu và quản lý ứng dụng</p></div>
+   <div class="section-surface"><h3>Sao lưu dữ liệu</h3><p class="small-muted">Xuất file JSON trước khi đổi máy hoặc cài lại ứng dụng. Nhập backup sẽ thay dữ liệu hiện có sau khi xác nhận.</p>
+      <div class="backup-strip" aria-label="Sao lưu và khôi phục dữ liệu"><button class="btn" id="exportBackup">⬇ Xuất backup</button><button class="btn" id="importBackup">⬆ Nhập backup</button><input type="file" id="backupFile" accept=".json,application/json" hidden></div>
+   </div>
+   <div class="section-surface"><h3>Quản lý mã</h3><button type="button" class="settings-row" data-forward="category"><span>🏷️ Phân loại mã</span><span>›</span></button><button type="button" class="settings-row" data-forward="paste"><span>📋 Dán mã mới</span><span>›</span></button><p class="small-muted">Trạng thái riêng có thể thêm hoặc xóa trong mục <b>Chỉnh</b> của từng mã.</p></div>
+   <div class="section-surface"><h3>Thông tin</h3><p class="small-muted">Kho mã của tôi · Phiên bản 6.14 (iPhone)</p><p class="small-muted">Dữ liệu lưu cục bộ; hạn và lượt được tính từ thông tin do bạn nhập. Tính năng kiểm tra chỉ hỗ trợ ghi nhận thủ công. Không tự đặt hàng hay thanh toán.</p></div>
+ </section>
+</main>
+<nav class="app-bottom-nav" aria-label="Điều hướng chính"><button type="button" class="nav-button active" data-tab="home" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 7h15v4.5a2.1 2.1 0 0 0 0 4.1V19H4.5v-3.4a2.1 2.1 0 0 0 0-4.1V7Z"/><path d="M8 8.5v9M12 8.5v9M16 8.5v9"/></svg><span>Kho mã</span></button><button type="button" class="nav-button " data-tab="tools" aria-current="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12c0 5.2 3.2 7.5 8 7.5s8-2.3 8-7.5H4Z"/><path d="M8 12V5.5l2.3-1.2L13 6v6M14 4.5l5 1.5M13 8h6"/></svg><span>Tiện ích</span></button><button type="button" class="nav-button " data-tab="stats" aria-current="false"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><rect x="4" y="11" width="4" height="9" rx="1"/><rect x="10" y="5" width="4" height="15" rx="1"/><rect x="16" y="8" width="4" height="12" rx="1"/></svg><span>Thống kê</span></button><button type="button" class="nav-button " data-tab="settings" aria-current="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.8 3h4.4l.7 2.1 1.9.8 2-.9 3 3-.9 2 .8 1.9 2.1.7v4.4l-2.1.7-.8 1.9.9 2-3 3-2-.9-1.9.8-.7 2.1H9.8l-.7-2.1-1.9-.8-2 .9-3-3 .9-2-.8-1.9-2.1-.7v-4.4l2.1-.7.8-1.9-.9-2 3-3 2 .9 1.9-.8.7-2.1Z" transform="translate(0 -1) scale(.95)"/><circle cx="12" cy="13" r="3"/></svg><span>Cài đặt</span></button></nav>
+<dialog id="pasteDialog"><form id="pasteForm"><div class="dlg-head"><h2>Dán danh sách mã</h2><button class="close" type="button" data-close="pasteDialog">×</button></div><div class="dlg-body"><label for="pasteCategory">Chọn phân loại mã *</label><select id="pasteCategory" required></select><label for="pasteCodes" style="margin-top:14px">Dán mã (mỗi dòng một mã) *</label><textarea id="pasteCodes" rows="11" required placeholder="MÃ001&#10;MÃ002&#10;MÃ003"></textarea><div class="form-grid" style="margin-top:14px"><div><label for="pasteExpiry">Hạn sử dụng (nếu biết)</label><input id="pasteExpiry" type="date"></div><div><label for="pasteMaxUses">Tổng lượt / mã (nếu biết)</label><input id="pasteMaxUses" type="number" min="1" max="1000000" placeholder="Để trống nếu chưa rõ"></div></div><p class="hint">Ngày hạn và số lượt được lấy từ thông tin bạn nhập, không kiểm tra trực tuyến.</p><p class="hint">Tự bỏ dòng trống và mã trùng trong cùng phân loại. Các mã đã lưu không bị xóa.</p></div><div class="dlg-actions"><button class="btn" type="button" data-close="pasteDialog">Hủy</button><button class="btn primary" type="submit">Lưu danh sách mã</button></div></form></dialog>
+<dialog id="categoryDialog"><div class="dlg-head"><h2>Phân loại mã</h2><button class="close" type="button" data-close="categoryDialog">×</button></div><div class="dlg-body"><label for="newCategory">Tên phân loại mới</label><div style="display:flex;gap:8px"><input id="newCategory" maxlength="60" placeholder="Ví dụ: 50, 100, 200"><button class="btn primary" type="button" id="createCategory">Thêm</button></div><div id="categoryList" style="margin-top:18px"></div></div><div class="dlg-actions"><button class="btn" type="button" data-close="categoryDialog">Đóng</button></div></dialog>
+<dialog id="editDialog"><form id="editForm"><div class="dlg-head"><h2>Chỉnh mã và trạng thái</h2><button type="button" class="close" data-close="editDialog">×</button></div><div class="dlg-body"><p id="editingCode" class="code" style="margin:0 0 12px"></p><div class="hint-verify">Trạng thái tùy chọn độc lập với hạn và lượt. Để trống nếu không cần.</div><div class="form-grid"><div><label for="editExpiry">Hạn sử dụng</label><input type="date" id="editExpiry"></div><div><label for="editMaxUses">Tổng lượt sử dụng</label><input type="number" id="editMaxUses" min="1" max="1000000" placeholder="Chưa rõ"></div><div class="full"><label for="editUsedCount">Lượt đã ghi nhận thủ công</label><input type="number" id="editUsedCount" min="0" max="1000000" value="0"></div></div><div class="status-editor"><label for="editStatus">Trạng thái của mã</label><select id="editStatus"></select><div class="status-add"><input id="newStatus" maxlength="36" placeholder="Thêm trạng thái mới"><button type="button" class="btn" id="addStatus">+ Thêm</button></div><div id="statusManager"></div></div><p class="hint">Để trống hạn hoặc tổng lượt nếu không có thông tin. Không tự suy đoán hạn hay số lượt từ mã ký tự.</p></div><div class="dlg-actions"><button class="btn" type="button" data-close="editDialog">Hủy</button><button class="btn primary" type="submit">Lưu cập nhật</button></div></form></dialog>
+<dialog id="checkDialog" aria-label="Kiểm tra voucher ShopeeFood">
+  <div class="dlg-head"><h2>🔎 Kiểm tra mã</h2><button type="button" class="close" data-close="checkDialog" aria-label="Đóng">×</button></div>
+  <div class="dlg-body">
+    <div class="check-counter" id="checkProgress">Mã 1/1</div>
+    <div class="check-code-box"><strong id="checkCodeText"></strong><small id="checkCategoryText"></small></div>
+    <div class="check-help">1. Chọn <b>Copy mã &amp; mở ShopeeFood</b>.<br>2. Trong ShopeeFood: chọn địa chỉ đã lưu → Đơn hàng → Đơn nháp → chọn đơn → Tiếp tục → Thêm voucher.<br>3. Dán mã và nhấn Áp dụng. <b>Không đặt hàng hay thanh toán.</b><br>4. Trở về Kho mã, chọn kết quả đúng như bạn thấy trên ShopeeFood rồi lưu.</div>
+    <div class="check-actions"><button class="btn primary" type="button" id="checkOpenFood">📋 Copy &amp; mở ShopeeFood</button><button class="btn" type="button" id="checkCopyOnly">📋 Chỉ copy mã</button></div>
+    <label for="checkResult">Kết quả bạn quan sát trên ShopeeFood *</label>
+    <select id="checkResult"><option value="">— Chọn kết quả —</option><option value="applied">✅ Áp dụng được</option><option value="exhausted">❌ Hết lượt sử dụng</option><option value="invalid_or_expired">❌ Không hợp lệ hoặc hết hạn (chưa phân biệt)</option><option value="conditions">⚠️ Không đủ điều kiện đơn hàng</option><option value="uncertain">❔ Chưa xác định / lỗi khác</option></select>
+    <div class="check-checklist">
+      <div><label for="checkExpiry">Ngày HSD ShopeeFood hiện (nếu có)</label><input type="date" id="checkExpiry"></div>
+      <div><label for="checkApplyExpiry">Cập nhật hạn đã lưu?</label><select id="checkApplyExpiry"><option value="no">Không (giữ hạn cũ)</option><option value="yes">Có, dùng hạn vừa nhập</option></select></div>
+      <div class="full"><label for="checkNote">Ghi chú kết quả / điều kiện đơn</label><textarea id="checkNote" rows="2" maxlength="300" placeholder="Ví dụ: Đơn nháp 72.000đ; đã áp dụng thành công"></textarea></div>
+    </div>
+    <div id="checkHistory" class="check-history"></div>
+    <p class="hint">Ứng dụng <b>không tự đọc</b> màn hình ShopeeFood. Kết quả chỉ được lưu sau khi bạn xác nhận. Không tự suy ra hết hạn từ thông báo chung “không hợp lệ hoặc hết hạn”.</p>
+  </div>
+  <div class="check-session-footer"><button class="btn" id="checkSkip" type="button">Bỏ qua</button><button class="btn" id="checkFinish" type="button">Kết thúc</button><button class="btn primary" id="checkSaveNext" type="button">Lưu &amp; tiếp</button></div>
+</dialog>
+<div class="toast" id="toast" role="status"></div>
+<script>window.appStorage=window.appStorage||window.localStorage;</script>
+<script>
+(()=>{'use strict';
+const KEY='shopeefood-voucher-v1',CATKEY='shopeefood-categories-v2',STATUSKEY='shopeefood-custom-status-v1',CHECKSESSIONKEY='shopeefood-check-session-v1';
+const $=id=>document.getElementById(id);
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const uid=()=>globalThis.crypto?.randomUUID?.()||Date.now()+'-'+Math.random().toString(36).slice(2);
+const positive=v=>{if(v===''||v==null)return null;const n=Number(v);return Number.isSafeInteger(n)&&n>=1&&n<=1000000?n:null};
+const nonneg=v=>{const n=Number(v);return Number.isSafeInteger(n)&&n>=0&&n<=1000000?n:0};
+const validDay=v=>{if(typeof v!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(v))return false;const [y,m,d]=v.split('-').map(Number),date=new Date(v+'T12:00:00');return !Number.isNaN(date.getTime())&&date.getFullYear()===y&&date.getMonth()+1===m&&date.getDate()===d};
+let customStatuses=[],items=[],categories=[],selectMode=false,visible=[],selected=new Set(),editingId=null;
+try{const v=JSON.parse(window.appStorage.getItem(KEY)||'[]');items=Array.isArray(v)?v:[]}catch{}
+try{const v=JSON.parse(window.appStorage.getItem(CATKEY)||'[]');categories=Array.isArray(v)?v.filter(x=>typeof x==='string'&&x.trim()):[]}catch{}
+try{const v=JSON.parse(window.appStorage.getItem(STATUSKEY)||'[]');customStatuses=Array.isArray(v)?v.filter(x=>typeof x==='string'&&x.trim()).slice(0,100):[]}catch{}
+if(!categories.length)categories=['50','100','200'];
+let checkSession=null;
+try{const x=JSON.parse(window.appStorage.getItem(CHECKSESSIONKEY)||'null');if(x&&Array.isArray(x.ids)&&x.ids.length&&x.ids.length<=500&&Number.isInteger(x.index)&&x.index>=0&&x.index<x.ids.length)checkSession={ids:x.ids.map(String),index:x.index}}catch{}
+function persistCheckSession(){try{if(checkSession)window.appStorage.setItem(CHECKSESSIONKEY,JSON.stringify(checkSession));else window.appStorage.removeItem(CHECKSESSIONKEY)}catch{notify('Không lưu được tiến trình kiểm tra')}}
+
+function persist(){try{window.appStorage.setItem(KEY,JSON.stringify(items));window.appStorage.setItem(CATKEY,JSON.stringify(categories));window.appStorage.setItem(STATUSKEY,JSON.stringify(customStatuses));return true}catch{alert('Không lưu được. Có thể bộ nhớ thiết bị đã đầy.');return false}}
+function notify(t){$('toast').textContent=t;$('toast').style.display='block';clearTimeout(notify.timer);notify.timer=setTimeout(()=>$('toast').style.display='none',2600)}
+function dateStatus(x){if(x.used)return 'used';if(x.checkResult==='exhausted')return 'exhausted';const max=positive(x.maxUses);if(max!==null&&nonneg(x.usedCount)>=max)return 'exhausted';if(!validDay(x.expiry))return 'unknown';const end=new Date(x.expiry+'T23:59:59.999');const now=new Date();if(now>end)return 'expired';return (end-now)<=3*86400000?'soon':'active'}
+const labels={custom:'Tùy chỉnh',used:'Đã dùng',expired:'Hết hạn theo ngày',soon:'Sắp hết hạn',active:'Còn lại',unknown:'Chưa rõ thời gian',exhausted:'Hết lượt đã ghi nhận'};
+function updateStatusFilters(){const f=$('filter'),old=f.value;f.querySelectorAll('[data-custom-filter]').forEach(e=>e.remove());for(const c of customStatuses){const o=document.createElement('option');o.value='cs:'+c;o.textContent=c;o.dataset.customFilter='1';f.append(o)}if([...f.options].some(o=>o.value===old))f.value=old}
+function updateCats(){const previous=$('categoryFilter').value;const options=categories.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');$('pasteCategory').innerHTML=options;$('categoryFilter').innerHTML='<option value="all">Tất cả loại</option>'+options;$('categoryFilter').value=categories.includes(previous)?previous:'all'}
+function filteredItems(){const q=$('search').value.trim().toLowerCase(),f=$('filter').value,c=$('categoryFilter').value,sort=$('sort').value;
+ const a=items.filter(x=>(c==='all'||(x.category||x.name||'Chưa phân loại')===c)&&(f==='all'||(f==='active'?['active','soon'].includes(dateStatus(x)):f==='custom'?!!x.customStatus:f.startsWith('cs:')?x.customStatus===f.slice(3):dateStatus(x)===f))&&[x.code,x.category,x.name,x.note,x.source].some(v=>String(v||'').toLowerCase().includes(q)));
+ a.sort((a,b)=>sort==='name'?String(a.category||a.name||'').localeCompare(String(b.category||b.name||''),'vi'):sort==='newest'?(b.created||0)-(a.created||0):String(a.expiry||'9999').localeCompare(String(b.expiry||'9999'))||(b.created||0)-(a.created||0));return a}
+const CATEGORY_COLORS=[
+ {ink:'#2059b5',bg:'#eaf2ff',border:'#92b7f7'},
+ {ink:'#7437a9',bg:'#f3eaff',border:'#c8a3f0'},
+ {ink:'#006b57',bg:'#dcf7eb',border:'#85d5bb'},
+ {ink:'#a3480a',bg:'#fff0d9',border:'#f0ba81'},
+ {ink:'#a32453',bg:'#ffe8f0',border:'#eda4bc'},
+ {ink:'#126884',bg:'#def5fd',border:'#93cee2'},
+ {ink:'#6b5416',bg:'#f6efcf',border:'#d5c680'},
+ {ink:'#365d96',bg:'#e7f1fa',border:'#98b6d8'},
+ {ink:'#ad3636',bg:'#fff0ee',border:'#eda49c'},
+ {ink:'#5556aa',bg:'#efedff',border:'#b6b2e7'}
+];
+function normalizedCat(value){return String(value||'Chưa phân loại').trim().replace(/^(mã|loại)\s+/i,'').toLowerCase()}
+function categoryPalette(value){
+ const key=normalizedCat(value);
+ const base={'50':0,'100':1,'200':2,'300':3,'500':4,'1000':5};
+ let i=base[key];
+ if(i===undefined){let hash=2166136261;for(const ch of key){hash=Math.imul(hash^ch.charCodeAt(0),16777619)>>>0}i=hash%CATEGORY_COLORS.length}
+ return CATEGORY_COLORS[i];
+}
+function catStyle(value){const col=categoryPalette(value);return `--cat-ink:${col.ink};--cat-bg:${col.bg};--cat-border:${col.border}`}
+function statusStyle(st){
+ // Red: expired; green: used; gray: remaining / unknown.
+ if(st==='expired'||st==='exhausted')return '--status-ink:#b83c38;--status-border:#c94b47;--status-soft:#fff1f0;--status-card:#fff7f6';
+ if(st==='custom')return '--status-ink:#416087;--status-border:#7999bd;--status-soft:#eaf2fa;--status-card:#f6faff';
+ if(st==='used')return '--status-ink:#147953;--status-border:#19845c;--status-soft:#eaf8f1;--status-card:#f4fbf7';
+ return '--status-ink:#5f6878;--status-border:#a6aeba;--status-soft:#f0f2f5;--status-card:#f8f9fb';
+}
+function formatCategory(x){const raw=String(x.category||x.name||'Chưa phân loại').trim();return /^(mã|loại)\s+/i.test(raw)?'Mã '+raw.replace(/^(mã|loại)\s+/i,''):'Mã '+raw}
+function formatCopy(x){
+ const raw=String(x.category||x.name||'Chưa phân loại').trim();
+ const cat=/^(mã|loại)\s+/i.test(raw)?raw.replace(/^(mã|loại)\s+/i,''):raw;
+ const prefix='Mã '+(cat||'Chưa phân loại');
+ const expiry=validDay(x.expiry)?'Hạn '+x.expiry.split('-').reverse().join('-'):'Hạn chưa rõ';
+ return prefix+' - '+String(x.code||'')+' - '+expiry;
+}
+function timeInfo(x){const max=positive(x.maxUses),used=nonneg(x.usedCount);if(validDay(x.expiry))return '⏰ '+x.expiry.split('-').reverse().join('/');if(max!==null)return '🔁 Còn '+Math.max(0,max-used)+'/'+max+' lượt';if(used>0)return '🔁 Đã ghi nhận '+used+' lượt';return '⏰ Chưa rõ thời gian'}
+function usageText(x){const max=positive(x.maxUses),used=nonneg(x.usedCount);const parts=[];if(validDay(x.expiry))parts.push('Hạn: '+x.expiry.split('-').reverse().join('/'));else parts.push('Hạn: chưa rõ');if(max!==null)parts.push('Lượt theo ghi nhận: '+Math.min(used,max)+'/'+max+' (còn '+Math.max(0,max-used)+')');else if(used>0)parts.push('Đã ghi nhận: '+used+' lượt');return parts.join(' · ')}
+const CHECK_LABELS={applied:'Áp dụng được',exhausted:'Hết lượt',invalid_or_expired:'Không hợp lệ / hết hạn',conditions:'Không đủ điều kiện',uncertain:'Chưa rõ'};
+function checkResultHTML(x){if(!x.checkResult||!CHECK_LABELS[x.checkResult])return '';const day=x.checkAt&&!Number.isNaN(Date.parse(x.checkAt))?new Date(x.checkAt).toLocaleString('vi-VN',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}):'';return `<div class="check-record"><span class="check-tag ${esc(x.checkResult)}">🔎 ${esc(CHECK_LABELS[x.checkResult])}</span><span>${esc(day)} · bạn ghi nhận</span></div>`}
+function refreshCheckResume(){const present=!!checkSession&&checkSession.index<checkSession.ids.length;const box=$('checkResume');box.hidden=!present;if(present)$('checkResumeSummary').textContent=`Đang kiểm tra ${checkSession.index+1}/${checkSession.ids.length} mã · có thể tiếp tục sau khi quay lại`}
+function render(){updateStatusFilters();refreshCheckResume();const counts={total:items.length,active:0,used:0,expired:0};for(const x of items){const st=dateStatus(x);if(st==='used')counts.used++;else if(st==='expired'||st==='exhausted')counts.expired++;else counts.active++}
+ $('stats').innerHTML=`<div class="stat orange"><small>Tổng số mã</small><b>${counts.total}</b><span class="stat-mark">⌑</span></div><div class="stat green"><small>Chưa dùng</small><b>${counts.active}</b><span class="stat-mark">◷</span></div><div class="stat"><small>Đã dùng</small><b>${counts.used}</b><span class="stat-mark">✓</span></div><div class="stat red"><small>Hết hạn/lượt</small><b>${counts.expired}</b><span class="stat-mark">⊘</span></div>`;
+ visible=filteredItems();const ids=new Set(items.map(x=>String(x.id)));for(const id of [...selected])if(!ids.has(id))selected.delete(id);
+ $('resultCount').textContent=visible.length+' mã';$('filterSummary').textContent=visible.length+' mã theo bộ lọc';$('selectionMode').textContent=selectMode?'✕ Xong chọn':'☑ Chọn nhiều';$('selectionMode').setAttribute('aria-expanded',String(selectMode));$('bulkPanel').hidden=!selectMode;
+ const n=visible.filter(x=>selected.has(String(x.id))).length;$('batchCount').textContent=`Đã chọn ${n}/${visible.length} mã`;
+ $('copySelected').disabled=!n;$('copyInfoSelected').disabled=!n;$('deleteSelected').disabled=!n;$('checkSelected').disabled=!n;$('selectAll').disabled=!visible.length;$('clearAll').disabled=!n;
+ $('list').innerHTML=visible.length?visible.map(x=>{const st=dateStatus(x),isSelected=selected.has(String(x.id));return `<article class="voucher ${isSelected?'selected':''}" style="${statusStyle(st)}" data-item-id="${esc(x.id)}"><div class="vtop"><label class="voucher-picker" ${selectMode?'':'hidden'}><input type="checkbox" data-pick="${esc(x.id)}" ${isSelected?'checked':''} aria-label="Chọn mã ${esc(x.code)}"></label><div class="voucher-heading"><h3 class="vname"><span class="category-pill" style="${catStyle(x.category||x.name)}">${esc(formatCategory(x))}</span></h3></div><span class="time-pill" title="Thời gian / lượt theo dữ liệu đã nhập">${esc(timeInfo(x))}</span>${x.customStatus&&customStatuses.includes(x.customStatus)?`<span class="manual-chip" title="Trạng thái tùy chọn">${esc(x.customStatus)}</span>`:''}<span class="chip ${st}" title="Tình trạng hạn và lượt">${esc(labels[st])}</span></div><div class="code-row"><span class="code">${esc(x.code)}</span><button type="button" class="copy-icon" data-act="copy-raw" data-id="${esc(x.id)}" aria-label="Copy riêng mã ${esc(x.code)}" title="Copy mã"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="11" height="12" rx="2"/><path d="M5 16H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button></div>${checkResultHTML(x)}<div class="copy-row"><button class="mini copy-raw" data-act="copy-raw" data-id="${esc(x.id)}" title="Chỉ sao chép mã">📋 Copy mã</button><button class="mini copy-info" data-act="copy-info" data-id="${esc(x.id)}" title="Sao chép phân loại, mã và hạn">📄 Copy thông tin</button></div><div class="actions"><button class="btn" data-act="check" data-id="${esc(x.id)}">🔎 Kiểm tra</button><button class="btn" data-act="edit" data-id="${esc(x.id)}">✎ Chỉnh</button><button class="btn" data-act="toggle" data-id="${esc(x.id)}">${x.used?'↩ Chưa dùng':'✓ Đã dùng'}</button><button class="btn" data-act="delete" data-id="${esc(x.id)}">Xóa</button></div></article>`}).join(''):'<div class="panel empty" style="grid-column:1/-1"><strong>Chưa có mã phù hợp</strong>Nhấn “Dán mã” để bắt đầu hoặc đổi bộ lọc.</div>'}
+function renderCategoryList(){$('categoryList').innerHTML=categories.map(c=>`<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;border-bottom:1px solid #eee;padding:10px 0"><span class="category-pill" style="${catStyle(c)}">${esc(formatCategory({category:c}))}</span><span style="margin-left:auto;color:#7e8797">${items.filter(x=>x.category===c).length} mã</span><button class="btn" data-category-delete="${esc(c)}">Xóa loại</button></div>`).join('')}
+function toBackup(){return JSON.stringify({format:'shopeefood-v6-backup',version:4,exportedAt:new Date().toISOString(),items,categories,customStatuses},null,2)}
+$('exportBackup').onclick=()=>{try{const data=toBackup(),filename='ShopeeFood_backup_'+new Date().toISOString().slice(0,10)+'.json';if(window.AndroidFiles?.saveFile){const bytes=new TextEncoder().encode(data);let binary='';for(let i=0;i<bytes.length;i+=8192)binary+=String.fromCharCode(...bytes.subarray(i,i+8192));window.AndroidFiles.saveFile(filename,'application/json',btoa(binary));notify('Chọn nơi lưu bản sao')}else{const blob=new Blob([data],{type:'application/json'});const download=()=>{const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),8000);notify('Đã tạo file backup')};if(navigator.share&&navigator.canShare&&typeof File!=='undefined'){const backupFile=new File([blob],filename,{type:'application/json'});if(navigator.canShare({files:[backupFile]})){navigator.share({files:[backupFile],title:'Backup Kho mã'}).catch(e=>{if(e?.name!=='AbortError')download()})}else download()}else download()}}catch{notify('Không xuất được bản sao')}};
+$('importBackup').onclick=()=>{if(window.iOSFiles?.pickBackup){window.iOSFiles.pickBackup();return}$('backupFile').value='';$('backupFile').click()};
+window.receiveIOSBackupText=raw=>{const text=String(raw||'');if(!text)return;const fakeFile={size:new TextEncoder().encode(text).length,text:async()=>text};$('backupFile').onchange({target:{files:[fakeFile]}})};
+$('backupFile').onchange=async e=>{const file=e.target.files?.[0];if(!file)return;if(file.size>10000000)return notify('Tệp quá lớn (tối đa 10MB)');try{const data=JSON.parse(await file.text());if(!data||!Array.isArray(data.items)||!Array.isArray(data.categories)||data.items.length>100000||data.categories.length>5000)throw Error('bad structure');if(data.items.some(x=>!x||typeof x!=='object'||typeof x.code!=='string'||x.code.length>160)||data.categories.some(c=>typeof c!=='string'||c.length>60))throw Error('bad records');const seenIds=new Set();const imported=data.items.map(x=>{const rawId=String(x.id||uid());const id=seenIds.has(rawId)?uid():rawId;seenIds.add(id);return {...x,id,code:x.code.slice(0,160),category:String(x.category||x.name||'Chưa phân loại').slice(0,60),used:x.used===true,expiry:validDay(x.expiry)?x.expiry:'',maxUses:positive(x.maxUses),usedCount:nonneg(x.usedCount)}});const cats=[...new Set([...data.categories,...imported.map(x=>x.category)])];if(!confirm(`Nhập ${imported.length} mã và ${cats.length} phân loại? Dữ liệu hiện tại sẽ được THAY THẾ. Hãy xuất backup trước khi tiếp tục.`))return;const oldItems=items,oldCats=categories,oldStatuses=[...customStatuses];customStatuses=Array.isArray(data.customStatuses)?data.customStatuses.filter(c=>typeof c==='string'&&c.length<=36).slice(0,100):[...new Set(imported.map(x=>x.customStatus).filter(x=>typeof x==='string'&&x.length<=36))];items=imported;categories=cats.length?cats:['50','100','200'];if(!persist()){items=oldItems;categories=oldCats;customStatuses=oldStatuses;return}selected.clear();selectMode=false;checkSession=null;persistCheckSession();updateCats();render();notify(`Đã khôi phục ${items.length} mã`)}catch{notify('File backup không hợp lệ. Dữ liệu hiện tại được giữ nguyên')}};
+$('pasteBtn').onclick=()=>{$('pasteCodes').value='';$('pasteExpiry').value='';$('pasteMaxUses').value='';$('pasteDialog').showModal();$('pasteCodes').focus()};
+$('categoryBtn').onclick=()=>{renderCategoryList();$('categoryDialog').showModal()};document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>$(b.dataset.close).close());
+$('createCategory').onclick=()=>{const c=$('newCategory').value.trim();if(!c)return notify('Nhập tên phân loại');if(c.length>60)return notify('Tên phân loại tối đa 60 ký tự');if(categories.some(x=>x.toLowerCase()===c.toLowerCase()))return notify('Phân loại đã tồn tại');categories.push(c);if(!persist()){categories.pop();return}$('newCategory').value='';updateCats();renderCategoryList();notify('Đã thêm phân loại')};
+$('categoryList').onclick=e=>{const b=e.target.closest('[data-category-delete]');if(!b)return;const c=b.dataset.categoryDelete,n=items.filter(x=>x.category===c).length;if(n&&!confirm(`Loại ${c} có ${n} mã. Xóa phân loại nhưng GIỮ LẠI các mã dưới dạng chưa phân loại?`))return;if(!n&&!confirm(`Xóa phân loại ${c}?`))return;const oldItems=items.map(x=>({...x})),oldCats=[...categories];items.forEach(x=>{if(x.category===c)x.category='Chưa phân loại'});categories=categories.filter(x=>x!==c);if(!categories.includes('Chưa phân loại')&&items.some(x=>x.category==='Chưa phân loại'))categories.push('Chưa phân loại');if(!persist()){items=oldItems;categories=oldCats;return}selected.clear();updateCats();renderCategoryList();render()};
+$('pasteForm').onsubmit=e=>{e.preventDefault();const category=$('pasteCategory').value;const codes=$('pasteCodes').value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);if(!category||!codes.length)return notify('Chọn phân loại và dán mã');const expiry=$('pasteExpiry').value;const useRaw=$('pasteMaxUses').value;if(expiry&&!validDay(expiry))return notify('Ngày hết hạn không hợp lệ');if(useRaw&&positive(useRaw)===null)return notify('Tổng lượt phải từ 1 đến 1.000.000');const seen=new Set(items.filter(x=>x.category===category).map(x=>String(x.code).toLowerCase()));const priorLen=items.length;let added=0,duplicates=0;for(const code of codes){if(code.length>160){duplicates++;continue}const key=code.toLowerCase();if(seen.has(key)){duplicates++;continue}seen.add(key);items.push({id:uid(),category,name:category,code,used:false,created:Date.now(),expiry,maxUses:positive(useRaw),usedCount:0});added++}if(!persist()){items.length=priorLen;render();return}render();$('pasteDialog').close();notify(`Đã thêm ${added} mã${duplicates?', bỏ qua '+duplicates+' dòng trùng/không hợp lệ':''}`);if(added&&confirm(`Đã thêm ${added} mã. Bắt đầu kiểm tra trên ShopeeFood?\nBạn sẽ xác nhận kết quả từng mã, không tự đặt hàng.`))startCheck(items.slice(-added).map(x=>String(x.id)))};
+['search','filter','sort','categoryFilter'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',()=>{selected.clear();render()}));
+function copied(s,count){try{if(window.AndroidFiles?.copyText){window.AndroidFiles.copyText(s);notify('Đã gửi '+count+' mã vào bộ nhớ sao chép');return}if(navigator.clipboard?.writeText){navigator.clipboard.writeText(s).then(()=>notify('Đã sao chép '+count+' mã')).catch(()=>fallbackCopy(s,count));return}fallbackCopy(s,count)}catch{notify('Không sao chép được')}}
+function fallbackCopy(s,count){try{const t=document.createElement('textarea');t.value=s;t.style.position='fixed';t.style.opacity='0';document.body.append(t);t.select();const ok=document.execCommand('copy');t.remove();notify(ok?'Đã sao chép '+count+' mã':'Không sao chép được')}catch{notify('Không sao chép được')}}
+$('selectionMode').onclick=()=>{selectMode=!selectMode;selected.clear();render()};
+$('selectAll').onclick=()=>{for(const x of visible)selected.add(String(x.id));render()};
+$('clearAll').onclick=()=>{for(const x of visible)selected.delete(String(x.id));render()};
+function getCurrentSelection(){return visible.filter(x=>selected.has(String(x.id)))}
+$('copySelected').onclick=()=>{const a=getCurrentSelection();if(!a.length)return notify('Chưa chọn mã nào');copied(a.map(x=>String(x.code||'')).join('\n'),a.length)};
+$('copyInfoSelected').onclick=()=>{const a=getCurrentSelection();if(!a.length)return notify('Chưa chọn mã nào');copied(a.map(formatCopy).join('\n'),a.length)};
+$('checkSelected').onclick=()=>{const a=getCurrentSelection();if(!a.length)return notify('Chưa chọn mã nào');startCheck(a.map(x=>String(x.id)))};
+$('deleteSelected').onclick=()=>{const a=getCurrentSelection();if(!a.length)return notify('Chưa chọn mã nào');if(!confirm(`XÓA VĨNH VIỄN ${a.length} mã đang chọn theo bộ lọc? Không thể hoàn tác. Hãy xuất backup trước khi xóa.`))return;const ids=new Set(a.map(x=>String(x.id)));const before=items;items=items.filter(x=>!ids.has(String(x.id)));if(!persist()){items=before;render();return}selected.clear();render();notify('Đã xóa '+a.length+' mã')};
+
+// V6.13: supervised check queue. No background automation or third-party screen scraping.
+function startCheck(ids){
+ const unique=[...new Set(ids.map(String))].filter(id=>items.some(x=>String(x.id)===id));
+ if(!unique.length)return notify('Không có mã để kiểm tra');
+ if(unique.length>500)return notify('Tối đa 500 mã mỗi đợt');
+ if(checkSession&&checkSession.index<checkSession.ids.length&&!confirm('Đang có đợt kiểm tra chưa xong. Thay bằng danh sách mới?'))return;
+ checkSession={ids:unique,index:0};persistCheckSession();showCheck();render();
+}
+function currentCheckItem(){
+ if(!checkSession)return null;
+ while(checkSession.index<checkSession.ids.length){const x=items.find(y=>String(y.id)===checkSession.ids[checkSession.index]);if(x)return x;checkSession.index++}
+ return null;
+}
+function finishChecks(){checkSession=null;persistCheckSession();if($('checkDialog').open)$('checkDialog').close();render()}
+function showCheck(){
+ const x=currentCheckItem();if(!x){finishChecks();return}
+ persistCheckSession();
+ $('checkProgress').textContent=`Mã ${checkSession.index+1}/${checkSession.ids.length}`;
+ $('checkCodeText').textContent=x.code;
+ $('checkCategoryText').textContent=formatCategory(x);
+ $('checkResult').value=CHECK_LABELS[x.checkResult]?x.checkResult:'';
+ $('checkExpiry').value=validDay(x.checkVerifiedExpiry)?x.checkVerifiedExpiry:'';
+ $('checkApplyExpiry').value='no';
+ $('checkNote').value=String(x.checkNote||'').slice(0,300);
+ const history=Array.isArray(x.checkHistory)?x.checkHistory.slice(-4).reverse():[];
+ $('checkHistory').innerHTML=history.length?'<b>Lịch sử ghi nhận gần đây:</b> '+history.map(h=>`${esc(h.at?new Date(h.at).toLocaleString('vi-VN'):'')} — ${esc(CHECK_LABELS[h.result]||'Chưa rõ')}`).join('<span style="color:#aab2c0"> · </span>'):'Chưa có lịch sử kiểm tra';
+ if(!$('checkDialog').open)$('checkDialog').showModal();
+ refreshCheckResume();
+}
+function stepCheck(){if(!checkSession)return;checkSession.index++;if(!currentCheckItem()){finishChecks();notify('Đã kết thúc đợt kiểm tra');return}persistCheckSession();showCheck();render()}
+$('checkResumeBtn').onclick=showCheck;
+$('checkEndBtn').onclick=()=>{if(confirm('Kết thúc đợt kiểm tra? Kết quả đã lưu được giữ nguyên.'))finishChecks()};
+$('checkCopyOnly').onclick=()=>{const x=currentCheckItem();if(x)copied(String(x.code),1)};
+$('checkOpenFood').onclick=()=>{
+ const x=currentCheckItem();if(!x)return;
+ if(window.AndroidFiles?.copyAndOpenShopeeFood){window.AndroidFiles.copyAndOpenShopeeFood(String(x.code));notify('Đã sao chép mã. Hãy nhập vào ô voucher của ShopeeFood');return}
+ copied(String(x.code),1);
+ if(window.AndroidFiles?.openExternal)window.AndroidFiles.openExternal('https://shopeefood.vn/');else notify('Đã copy mã. Mở ShopeeFood để thử mã rồi quay lại ghi nhận');
+};
+$('checkSkip').onclick=()=>{if(!checkSession)return;stepCheck()};
+$('checkFinish').onclick=()=>{if(confirm('Kết thúc kiểm tra? Các kết quả đã lưu vẫn được giữ.'))finishChecks()};
+$('checkSaveNext').onclick=()=>{
+ const x=currentCheckItem();if(!x)return;
+ const result=$('checkResult').value;if(!Object.prototype.hasOwnProperty.call(CHECK_LABELS,result))return notify('Vui lòng chọn kết quả đã thấy trên ShopeeFood');
+ const expiry=$('checkExpiry').value,apply=$('checkApplyExpiry').value==='yes';
+ if(expiry&&!validDay(expiry))return notify('Ngày hết hạn không hợp lệ');
+ if(apply&&(!expiry||!validDay(expiry)))return notify('Nhập ngày HSD hợp lệ trước khi cập nhật');
+ const old={checkResult:x.checkResult,checkAt:x.checkAt,checkNote:x.checkNote,checkVerifiedExpiry:x.checkVerifiedExpiry,checkHistory:x.checkHistory,expiry:x.expiry};
+ x.checkResult=result;x.checkAt=new Date().toISOString();x.checkNote=$('checkNote').value.trim().slice(0,300);x.checkVerifiedExpiry=expiry||'';
+ const history=Array.isArray(x.checkHistory)?x.checkHistory.slice(-29):[];
+ x.checkHistory=[...history,{result,at:x.checkAt,note:x.checkNote,expiry:x.checkVerifiedExpiry}];
+ if(apply)x.expiry=expiry;
+ if(!persist()){Object.assign(x,old);return}
+ stepCheck();
+};
+
+$('list').onchange=e=>{const input=e.target.closest('input[data-pick]');if(!input)return;const id=input.dataset.pick;if(input.checked)selected.add(id);else selected.delete(id);render()};
+$('list').onclick=e=>{const b=e.target.closest('button[data-act]');if(!b)return;const x=items.find(y=>String(y.id)===b.dataset.id);if(!x)return;
+ if(b.dataset.act==='copy-raw')return copied(String(x.code||''),1);
+ if(b.dataset.act==='copy-info')return copied(formatCopy(x),1);
+ if(b.dataset.act==='check'){startCheck([String(x.id)]);return}
+ if(b.dataset.act==='edit'){editingId=String(x.id);renderStatusEditor(x.customStatus||'');$('editingCode').textContent=x.code;$('editExpiry').value=validDay(x.expiry)?x.expiry:'';$('editMaxUses').value=positive(x.maxUses)??'';$('editUsedCount').value=nonneg(x.usedCount);$('editDialog').showModal();return}
+ if(b.dataset.act==='toggle'){const old=x.used;x.used=!old;if(!persist()){x.used=old;return}render();return}
+ if(b.dataset.act==='delete'&&confirm(`Xóa mã ${x.code}?`)){const before=items;items=items.filter(y=>y!==x);if(!persist()){items=before;return}selected.delete(String(x.id));render();notify('Đã xóa mã')}};
+$('editForm').onsubmit=e=>{e.preventDefault();const x=items.find(y=>String(y.id)===editingId);if(!x)return $('editDialog').close();const expiry=$('editExpiry').value,raw=$('editMaxUses').value,countRaw=$('editUsedCount').value;if(expiry&&!validDay(expiry))return notify('Hạn không hợp lệ');if(raw&&positive(raw)===null)return notify('Tổng lượt phải từ 1 đến 1.000.000');if(countRaw===''||!Number.isSafeInteger(Number(countRaw))||Number(countRaw)<0||Number(countRaw)>1000000)return notify('Số lượt đã dùng không hợp lệ');const max=positive(raw),count=nonneg(countRaw);if(max!==null&&count>max)return notify('Lượt đã dùng không được lớn hơn tổng lượt');const old={expiry:x.expiry,maxUses:x.maxUses,usedCount:x.usedCount,customStatus:x.customStatus};x.expiry=expiry;x.maxUses=max;x.usedCount=count;x.customStatus=$('editStatus').value;if(!persist()){Object.assign(x,old);return}$('editDialog').close();render();notify('Đã cập nhật theo dữ liệu bạn nhập')};
+function renderStatusEditor(value){$('editStatus').innerHTML='<option value="">Không chọn trạng thái</option>'+customStatuses.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');$('editStatus').value=customStatuses.includes(value)?value:'';$('statusManager').innerHTML=customStatuses.map(c=>`<span class="status-tag">${esc(c)} <button type="button" data-remove-status="${esc(c)}" aria-label="Xóa trạng thái ${esc(c)}">×</button></span>`).join('')}
+$('addStatus').onclick=()=>{const v=$('newStatus').value.trim();if(!v||v.length>36)return notify('Tên trạng thái từ 1 đến 36 ký tự');if(customStatuses.some(x=>x.toLowerCase()===v.toLowerCase()))return notify('Trạng thái đã tồn tại');if(customStatuses.length>=100)return notify('Tối đa 100 trạng thái');customStatuses.push(v);if(!persist()){customStatuses.pop();return}$('newStatus').value='';renderStatusEditor(v);render()};
+$('statusManager').onclick=e=>{const b=e.target.closest('[data-remove-status]');if(!b)return;const c=b.dataset.removeStatus;if(!confirm('Xóa trạng thái '+c+'? Trạng thái này sẽ được bỏ khỏi các mã đang dùng.'))return;const old=[...customStatuses];customStatuses=customStatuses.filter(x=>x!==c);const changed=items.filter(x=>x.customStatus===c);changed.forEach(x=>x.customStatus='');if(!persist()){customStatuses=old;changed.forEach(x=>x.customStatus=c);return}renderStatusEditor('');render()};
+for(const x of items){if(!x.id)x.id=uid();if(!x.category)x.category=x.name||'Chưa phân loại';if(!categories.includes(x.category))categories.push(x.category)}persist();updateCats();render();
+// Local recalculation after returning to the app, and during long sessions.
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)render()});window.addEventListener('focus',render);setInterval(()=>{if(!document.hidden)render()},60000);
+document.querySelectorAll('[data-shop]').forEach(btn=>btn.addEventListener('click',()=>{const url=btn.dataset.shop==='food'?'https://shopeefood.vn/':'https://shopee.vn/';if(window.AndroidFiles?.openExternal)window.AndroidFiles.openExternal(url);else window.open(url,'_blank','noopener,noreferrer')}));
+if('serviceWorker' in navigator&&location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+})();
+</script>
+<script>
+(() => {
+ 'use strict';
+ const byId=id=>document.getElementById(id);
+ let currentTab='home';
+ const navButtons=[...document.querySelectorAll('.nav-button')];
+ const screens=[...document.querySelectorAll('section[data-view]')];
+ const jumpTo=tab=>{
+   if(!screens.some(x=>x.dataset.view===tab))return;
+   currentTab=tab;
+   document.querySelector('.app-main').classList.toggle('subview-open',tab!=='home');
+   screens.forEach(x=>{const active=x.dataset.view===tab;x.hidden=!active;x.classList.toggle('active-screen',active)});
+   navButtons.forEach(b=>{const active=b.dataset.tab===tab;b.classList.toggle('active',active);b.setAttribute('aria-current',active?'page':'false')});
+   closeMenu();
+   if(tab==='stats')renderExtraStats();
+   window.scrollTo(0,0);
+ };
+ function closeMenu(){byId('headerDropdown').hidden=true;byId('menuToggle').setAttribute('aria-expanded','false')}
+ function openSearch(){jumpTo('home');const e=byId('search');e.focus();e.scrollIntoView({behavior:'smooth',block:'center'})}
+ function openCategory(){jumpTo('tools');byId('categoryBtn').click()}
+ function openPaste(){jumpTo('tools');byId('pasteBtn').click()}
+ function exportBackup(){jumpTo('settings');byId('exportBackup').click()}
+ navButtons.forEach(b=>b.addEventListener('click',()=>jumpTo(b.dataset.tab)));
+ byId('goSearch').addEventListener('click',openSearch);
+ byId('listActions').addEventListener('click',()=>jumpTo('tools'));
+ byId('menuToggle').addEventListener('click',()=>{const d=byId('headerDropdown');d.hidden=!d.hidden;byId('menuToggle').setAttribute('aria-expanded',String(!d.hidden))});
+ byId('headerDropdown').addEventListener('click',e=>{
+   const b=e.target.closest('[data-action]');if(!b)return;
+   if(b.dataset.action==='paste')openPaste();
+   if(b.dataset.action==='category')openCategory();
+   if(b.dataset.action==='backup')exportBackup();
+   if(b.dataset.action==='settings')jumpTo('settings');
+ });
+ document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>jumpTo(b.dataset.go)));
+ document.querySelectorAll('[data-forward]').forEach(b=>b.addEventListener('click',()=>b.dataset.forward==='category'?openCategory():openPaste()));
+ document.addEventListener('click',e=>{if(!byId('headerDropdown').hidden&&!e.target.closest('#headerDropdown')&&!e.target.closest('#menuToggle'))closeMenu()});
+ window.sfNavigateBack=()=>{if(!byId('headerDropdown').hidden){closeMenu();return true}if(currentTab!=='home'){jumpTo('home');return true}return false};
+ const sanitize=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ function renderExtraStats(){
+   let items=[];
+   try {items=JSON.parse(window.appStorage.getItem('shopeefood-voucher-v1')||'[]');if(!Array.isArray(items))items=[]}catch{}
+   const catCounts={},checkCounts={},stats={used:0,expired:0,unused:0};
+   const today=new Date();const ymd=new Date(today.getFullYear(),today.getMonth(),today.getDate()).getTime();
+   for(const item of items){
+     const cat=String(item.category||item.name||'Chưa phân loại');catCounts[cat]=(catCounts[cat]||0)+1;
+     if(item.used===true)stats.used++;
+     else if((Number(item.maxUses)>0&&Number(item.usedCount)>=Number(item.maxUses))||(typeof item.expiry==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(item.expiry)&&new Date(item.expiry+'T00:00:00').getTime()<ymd))stats.expired++;
+     else stats.unused++;
+     if(item.checkResult)checkCounts[item.checkResult]=(checkCounts[item.checkResult]||0)+1;
+   }
+   const totals=[['Tổng số mã',items.length,'orange'],['Chưa dùng',stats.unused,'green'],['Đã dùng',stats.used,''],['Hết hạn/lượt',stats.expired,'red']];
+   byId('statOverview').innerHTML=totals.map(([label,value,color])=>`<div class="stat ${color}"><small>${label}</small><b>${value}</b></div>`).join('');
+   const max=Math.max(1,...Object.values(catCounts));
+   byId('categoryStatistics').innerHTML=Object.entries(catCounts).sort((a,b)=>b[1]-a[1]).map(([label,value])=>`<div class="analytic-line"><div class="analytic-head"><span>${sanitize(label)}</span><span>${value} mã</span></div><div class="analytic-track"><div class="analytic-fill" style="width:${Math.round(100*value/max)}%"></div></div></div>`).join('')||'<p class="small-muted">Chưa có mã trong kho.</p>';
+   const names={applied:'Áp dụng được',exhausted:'Hết lượt',invalid_or_expired:'Không hợp lệ / hết hạn',conditions:'Không đủ điều kiện',uncertain:'Chưa xác định'};
+   byId('checkStatistics').innerHTML=Object.entries(checkCounts).map(([label,value])=>`<div class="analytic-head"><span>${sanitize(names[label]||label)}</span><b>${value} mã</b></div>`).join('')||'<p class="small-muted">Chưa có kết quả kiểm tra được lưu.</p>';
+ }
+})();
+</script>
+</body></html>
