@@ -1,4 +1,4 @@
-SHOPEEFOOD V6.14 - BẢN IPHONE (THÊM VÀO MÀN HÌNH CHÍNH)
+SHOPEEFOOD V6.15 - BẢN IPHONE (THÊM VÀO MÀN HÌNH CHÍNH)
 
 Đây là mã nguồn PWA, KHÔNG phải file IPA. Cần đăng các tệp lên HTTPS một lần trước khi cài vào iPhone.
 
@@ -10,6 +10,9 @@ CÁCH ĐƠN GIẢN BẰNG GITHUB PAGES:
 5. Mở đúng link đó trong Safari trên iPhone.
 6. Chạm Chia sẻ > Thêm vào Màn hình chính > Thêm.
 7. Mở icon "Kho mã" ở Màn hình chính. Lần truy cập đầu cần mạng; bản PWA có thể chạy offline sau khi tài nguyên được lưu cache.
+
+CHỨC NĂNG MỚI: Tổng quan theo phân loại, ghi giờ nhập / dùng / gửi mã, tính tiền mua và theo dõi thanh toán.
+Xem README_CAP_NHAT_V6_15.txt để biết chi tiết.
 
 CÁC CHỨC NĂNG:
 - Dán mã, tạo phân loại, chỉnh hạn và số lượt, hai kiểu Copy, chọn/xóa hàng loạt.

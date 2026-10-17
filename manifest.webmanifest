@@ -2,7 +2,7 @@
   "id": "./",
   "name": "Kho mã của tôi - ShopeeFood",
   "short_name": "Kho mã",
-  "description": "Quản lý mã ShopeeFood, tra cứu có giám sát, phân loại và sao lưu trên iPhone",
+  "description": "Kho mã ShopeeFood cá nhân: phân loại, thời gian nhập/dùng, đã gửi và thanh toán",
   "lang": "vi",
   "start_url": "./index.html",
   "scope": "./",
