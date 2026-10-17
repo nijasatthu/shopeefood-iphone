@@ -406,6 +406,7 @@ main.app-main{max-width:800px;margin:-29px auto 0;padding:0 12px 32px}
 .section-heading{display:flex;align-items:center;justify-content:space-between;gap:6px}.section-heading h3{margin:0!important}.section-heading small{color:#8a95a5;font-size:10px}.price-grid{display:grid;gap:7px}.price-line{display:grid;grid-template-columns:1fr minmax(90px,130px) auto;align-items:center;gap:7px;padding:7px 0;border-bottom:1px solid #f0f2f6}.price-line .price-label{font-size:13px;font-weight:750}.price-line input{font-size:14px;padding:9px 7px;text-align:right}.price-line .btn{font-size:11px;padding:9px 10px}
 @media(max-width:370px){.category-tile{padding:10px}.category-tile b{font-size:13px}.overview-stats .stat b{font-size:19px}.voucher .actions .btn{font-size:9px!important}.money-stat b{font-size:19px}}
 @media(min-width:700px){.category-dashboard{grid-template-columns:repeat(3,minmax(0,1fr))}.voucher-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:670px){.home-category-grid{gap:7px!important}.home-category-grid>*{padding:9px!important}.home-category-grid h3{font-size:14px!important}.home-category-grid strong{font-size:24px!important}.home-overview{padding:10px!important}}
 </style></head><body>
 <header class="app-header">
   <div class="top top-app">
@@ -435,7 +436,7 @@ main.app-main{max-width:800px;margin:-29px auto 0;padding:0 12px 32px}
      <div class="search-opt"><label for="search" class="sr">Tìm theo mã, tên, ghi chú</label><input id="search" type="search" placeholder="⌕  Tìm mã, tên, tài khoản..."></div>
      <div class="filter-opt"><label for="categoryFilter" class="sr">Loại mã</label><select id="categoryFilter" aria-label="Loại mã"></select></div>
      <div class="filter-opt"><label for="filter" class="sr">Trạng thái</label><select id="filter" aria-label="Trạng thái"><option value="all">Tất cả</option><option value="active">Còn lại</option><option value="soon">Sắp hết hạn (3 ngày)</option><option value="used">Đã dùng</option><option value="expired">Hết hạn theo ngày</option><option value="exhausted">Hết lượt đã ghi nhận</option><option value="unknown">Chưa rõ thời gian</option></select></div>
-     <div class="list-sort"><label for="sort" class="sr">Sắp xếp mã</label><select id="sort" aria-label="Sắp xếp mã"><option value="expiry">Hạn gần nhất</option><option value="newest">Mới thêm</option><option value="name">Tên A → Z</option></select></div>
+     <div class="list-sort"><label for="sort" class="sr">Sắp xếp mã</label><select id="sort" aria-label="Sắp xếp mã"><option value="expiry">Hạn xa → gần (đã dùng: gần → xa)</option><option value="newest">Mới thêm</option><option value="name">Tên A → Z</option></select></div>
    </div></section>
    <div class="list-heading"><div class="list-heading-copy"><strong>Danh sách mã</strong><span id="resultCount"></span></div><div class="list-tools"><button type="button" class="btn" id="selectionMode" aria-expanded="false">☑ Chọn nhiều</button><button type="button" class="btn options-btn" id="listActions" aria-label="Mở tiện ích quản lý mã">☷</button></div></div>
    <span class="sr" id="filterSummary">Thao tác theo bộ lọc hiện tại</span>
@@ -476,7 +477,7 @@ main.app-main{max-width:800px;margin:-29px auto 0;padding:0 12px 32px}
       <div class="backup-strip" aria-label="Sao lưu và khôi phục dữ liệu"><button class="btn" id="exportBackup">⬇ Xuất backup</button><button class="btn" id="importBackup">⬆ Nhập backup</button><input type="file" id="backupFile" accept=".json,application/json" hidden></div>
    </div>
    <div class="section-surface"><h3>Quản lý mã</h3><button type="button" class="settings-row" data-forward="category"><span>🏷️ Phân loại mã</span><span>›</span></button><button type="button" class="settings-row" data-forward="paste"><span>📋 Dán mã mới</span><span>›</span></button><p class="small-muted">Trạng thái riêng có thể thêm hoặc xóa trong mục <b>Chỉnh</b> của từng mã.</p></div>
-   <div class="section-surface"><h3>Thông tin</h3><p class="small-muted">Kho mã của tôi · Phiên bản 6.15 (iPhone)</p><p class="small-muted">Dữ liệu lưu cục bộ; hạn và lượt được tính từ thông tin do bạn nhập. Tính năng kiểm tra chỉ hỗ trợ ghi nhận thủ công. Không tự đặt hàng hay thanh toán.</p></div>
+   <div class="section-surface"><h3>Thông tin</h3><p class="small-muted">Kho mã của tôi · Phiên bản 6.16 (iPhone)</p><p class="small-muted">Dữ liệu lưu cục bộ; hạn và lượt được tính từ thông tin do bạn nhập. Tính năng kiểm tra chỉ hỗ trợ ghi nhận thủ công. Không tự đặt hàng hay thanh toán.</p></div>
  </section>
 </main>
 <nav class="app-bottom-nav" aria-label="Điều hướng chính">
@@ -485,7 +486,7 @@ main.app-main{max-width:800px;margin:-29px auto 0;padding:0 12px 32px}
 <button type="button" class="nav-button" data-tab="sent" aria-current="false"><span class="nav-symbol" aria-hidden="true">↗</span><span>Đã gửi</span></button>
 <button type="button" class="nav-button" data-tab="settings" aria-current="false"><span class="nav-symbol" aria-hidden="true">⚙</span><span>Cài đặt</span></button>
 </nav>
-<dialog id="pasteDialog"><form id="pasteForm"><div class="dlg-head"><h2>Dán danh sách mã</h2><button class="close" type="button" data-close="pasteDialog">×</button></div><div class="dlg-body"><label for="pasteCategory">Chọn phân loại mã *</label><select id="pasteCategory" required></select><label for="pasteCodes" style="margin-top:14px">Dán mã (mỗi dòng một mã) *</label><textarea id="pasteCodes" rows="11" required placeholder="MÃ001&#10;MÃ002&#10;MÃ003"></textarea><div class="form-grid" style="margin-top:14px"><div><label for="pasteExpiry">Hạn sử dụng (nếu biết)</label><input id="pasteExpiry" type="date"></div><div><label for="pasteMaxUses">Tổng lượt / mã (nếu biết)</label><input id="pasteMaxUses" type="number" min="1" max="1000000" placeholder="Để trống nếu chưa rõ"></div></div><p class="hint">Ngày hạn và số lượt được lấy từ thông tin bạn nhập, không kiểm tra trực tuyến.</p><p class="hint">Tự bỏ dòng trống và mã trùng trong cùng phân loại. Các mã đã lưu không bị xóa.</p></div><div class="dlg-actions"><button class="btn" type="button" data-close="pasteDialog">Hủy</button><button class="btn primary" type="submit">Lưu danh sách mã</button></div></form></dialog>
+<dialog id="pasteDialog"><form id="pasteForm"><div class="dlg-head"><h2>Dán danh sách mã</h2><button class="close" type="button" data-close="pasteDialog">×</button></div><div class="dlg-body"><label for="pasteCategory">Chọn phân loại mã *</label><select id="pasteCategory" required></select><label for="pasteCodes" style="margin-top:14px">Dán mã (cách nhau bằng dấu cách hoặc xuống dòng) *</label><textarea id="pasteCodes" rows="11" required placeholder="MÃ001 MÃ002 MÃ003"></textarea><div class="form-grid" style="margin-top:14px"><div><label for="pasteExpiry">Hạn sử dụng (nếu biết)</label><input id="pasteExpiry" type="date"></div></div><p class="hint">Có hạn: lưu ngay toàn bộ mã hợp lệ. Chưa có hạn: kiểm tra rồi chọn mã để lưu.</p><p class="hint">Tự bỏ dòng trống và mã trùng trong cùng phân loại. Các mã đã lưu không bị xóa.</p></div><div class="dlg-actions"><button class="btn" type="button" data-close="pasteDialog">Hủy</button><button class="btn primary" type="submit">Lưu danh sách mã</button></div></form></dialog>
 <dialog id="categoryDialog"><div class="dlg-head"><h2>Phân loại mã</h2><button class="close" type="button" data-close="categoryDialog">×</button></div><div class="dlg-body"><label for="newCategory">Tên phân loại mới</label><div style="display:flex;gap:8px"><input id="newCategory" maxlength="60" placeholder="Ví dụ: 50, 100, 200"><button class="btn primary" type="button" id="createCategory">Thêm</button></div><div id="categoryList" style="margin-top:18px"></div></div><div class="dlg-actions"><button class="btn" type="button" data-close="categoryDialog">Đóng</button></div></dialog>
 <dialog id="editDialog"><form id="editForm"><div class="dlg-head"><h2>Chỉnh mã và trạng thái</h2><button type="button" class="close" data-close="editDialog">×</button></div><div class="dlg-body"><p id="editingCode" class="code" style="margin:0 0 12px"></p><div class="hint-verify">Trạng thái tùy chọn độc lập với hạn và lượt. Để trống nếu không cần.</div><div class="form-grid"><div><label for="editExpiry">Hạn sử dụng</label><input type="date" id="editExpiry"></div><div><label for="editMaxUses">Tổng lượt sử dụng</label><input type="number" id="editMaxUses" min="1" max="1000000" placeholder="Chưa rõ"></div><div class="full"><label for="editUsedCount">Lượt đã ghi nhận thủ công</label><input type="number" id="editUsedCount" min="0" max="1000000" value="0"></div></div><div class="status-editor"><label for="editStatus">Trạng thái của mã</label><select id="editStatus"></select><div class="status-add"><input id="newStatus" maxlength="36" placeholder="Thêm trạng thái mới"><button type="button" class="btn" id="addStatus">+ Thêm</button></div><div id="statusManager"></div></div><p class="hint">Để trống hạn hoặc tổng lượt nếu không có thông tin. Không tự suy đoán hạn hay số lượt từ mã ký tự.</p></div><div class="dlg-actions"><button class="btn" type="button" data-close="editDialog">Hủy</button><button class="btn primary" type="submit">Lưu cập nhật</button></div></form></dialog>
 <dialog id="checkDialog" aria-label="Kiểm tra voucher ShopeeFood">
@@ -499,10 +500,10 @@ main.app-main{max-width:800px;margin:-29px auto 0;padding:0 12px 32px}
     <select id="checkResult"><option value="">— Chọn kết quả —</option><option value="applied">✅ Áp dụng được</option><option value="exhausted">❌ Hết lượt sử dụng</option><option value="invalid_or_expired">❌ Không hợp lệ hoặc hết hạn (chưa phân biệt)</option><option value="conditions">⚠️ Không đủ điều kiện đơn hàng</option><option value="uncertain">❔ Chưa xác định / lỗi khác</option></select>
     <div class="check-checklist">
       <div><label for="checkExpiry">Ngày HSD ShopeeFood hiện (nếu có)</label><input type="date" id="checkExpiry"></div>
-      <div><label for="checkApplyExpiry">Cập nhật hạn đã lưu?</label><select id="checkApplyExpiry"><option value="no">Không (giữ hạn cũ)</option><option value="yes">Có, dùng hạn vừa nhập</option></select></div>
-      <div class="full"><label for="checkNote">Ghi chú kết quả / điều kiện đơn</label><textarea id="checkNote" rows="2" maxlength="300" placeholder="Ví dụ: Đơn nháp 72.000đ; đã áp dụng thành công"></textarea></div>
+      <div><label><input type="checkbox" id="checkApplyAll" style="width:auto"> Áp dụng hạn cho toàn bộ mã vừa nhập</label></div>
+      
     </div>
-    <div id="checkHistory" class="check-history"></div>
+    <div id="checkHistory" class="check-history"></div><div id="pendingPick" style="display:none;margin-top:12px"></div>
     <p class="hint">Ứng dụng <b>không tự đọc</b> màn hình ShopeeFood. Kết quả chỉ được lưu sau khi bạn xác nhận. Không tự suy ra hết hạn từ thông báo chung “không hợp lệ hoặc hết hạn”.</p>
   </div>
   <div class="check-session-footer"><button class="btn" id="checkSkip" type="button">Bỏ qua</button><button class="btn" id="checkFinish" type="button">Kết thúc</button><button class="btn primary" id="checkSaveNext" type="button">Lưu &amp; tiếp</button></div>
@@ -531,7 +532,7 @@ try{const v=JSON.parse(window.appStorage.getItem(KEY)||'[]');items=Array.isArray
 try{const v=JSON.parse(window.appStorage.getItem(CATKEY)||'[]');categories=Array.isArray(v)?v.filter(x=>typeof x==='string'&&x.trim()):[]}catch{}
 try{const v=JSON.parse(window.appStorage.getItem(STATUSKEY)||'[]');customStatuses=Array.isArray(v)?v.filter(x=>typeof x==='string'&&x.trim()).slice(0,100):[]}catch{}
 if(!categories.length)categories=['50','100','200'];
-let checkSession=null;
+let checkSession=null;let pendingCodes=null;
 try{const x=JSON.parse(window.appStorage.getItem(CHECKSESSIONKEY)||'null');if(x&&Array.isArray(x.ids)&&x.ids.length&&x.ids.length<=500&&Number.isInteger(x.index)&&x.index>=0&&x.index<x.ids.length)checkSession={ids:x.ids.map(String),index:x.index}}catch{}
 function persistCheckSession(){try{if(checkSession)window.appStorage.setItem(CHECKSESSIONKEY,JSON.stringify(checkSession));else window.appStorage.removeItem(CHECKSESSIONKEY)}catch{notify('Không lưu được tiến trình kiểm tra')}}
 
@@ -543,7 +544,7 @@ function updateStatusFilters(){const f=$('filter'),old=f.value;f.querySelectorAl
 function updateCats(){const previous=$('categoryFilter').value;const options=categories.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');$('pasteCategory').innerHTML=options;$('categoryFilter').innerHTML='<option value="all">Tất cả loại</option>'+options;$('categoryFilter').value=categories.includes(previous)?previous:'all'}
 function filteredItems(){const q=$('search').value.trim().toLowerCase(),f=$('filter').value,c=$('categoryFilter').value,sort=$('sort').value;
  const a=items.filter(x=>(c==='all'||(x.category||x.name||'Chưa phân loại')===c)&&(f==='all'||(f==='active'?['active','soon'].includes(dateStatus(x)):f==='custom'?!!x.customStatus:f.startsWith('cs:')?x.customStatus===f.slice(3):dateStatus(x)===f))&&[x.code,x.category,x.name,x.note,x.source].some(v=>String(v||'').toLowerCase().includes(q)));
- a.sort((a,b)=>sort==='name'?String(a.category||a.name||'').localeCompare(String(b.category||b.name||''),'vi'):sort==='newest'?(b.created||0)-(a.created||0):String(a.expiry||'9999').localeCompare(String(b.expiry||'9999'))||(b.created||0)-(a.created||0));return a}
+ a.sort((a,b)=>sort==='name'?String(a.category||a.name||'').localeCompare(String(b.category||b.name||''),'vi'):sort==='newest'?(b.created||0)-(a.created||0):(f==='used'?String(a.expiry||'9999').localeCompare(String(b.expiry||'9999')):String(b.expiry||'0000').localeCompare(String(a.expiry||'0000')))||(b.created||0)-(a.created||0));return a}
 const CATEGORY_COLORS=[
  {ink:'#2059b5',bg:'#eaf2ff',border:'#92b7f7'},
  {ink:'#7437a9',bg:'#f3eaff',border:'#c8a3f0'},
@@ -630,12 +631,12 @@ $('exportBackup').onclick=()=>{try{const data=toBackup(),filename='ShopeeFood_ba
 $('importBackup').onclick=()=>{if(window.iOSFiles?.pickBackup){window.iOSFiles.pickBackup();return}$('backupFile').value='';$('backupFile').click()};
 window.receiveIOSBackupText=raw=>{const text=String(raw||'');if(!text)return;const fakeFile={size:new TextEncoder().encode(text).length,text:async()=>text};$('backupFile').onchange({target:{files:[fakeFile]}})};
 $('backupFile').onchange=async e=>{const file=e.target.files?.[0];if(!file)return;if(file.size>10000000)return notify('Tệp quá lớn (tối đa 10MB)');try{const data=JSON.parse(await file.text());if(!data||!Array.isArray(data.items)||!Array.isArray(data.categories)||data.items.length>100000||data.categories.length>5000)throw Error('bad structure');if(data.items.some(x=>!x||typeof x!=='object'||typeof x.code!=='string'||x.code.length>160)||data.categories.some(c=>typeof c!=='string'||c.length>60))throw Error('bad records');const seenIds=new Set();const imported=data.items.map(x=>{const rawId=String(x.id||uid());const id=seenIds.has(rawId)?uid():rawId;seenIds.add(id);return {...x,id,code:x.code.slice(0,160),category:String(x.category||x.name||'Chưa phân loại').slice(0,60),used:x.used===true,usedAt:x.used===true&&typeof x.usedAt==='string'&&!Number.isNaN(Date.parse(x.usedAt))?x.usedAt:null,sent:x.sent===true,sentAt:x.sent===true&&typeof x.sentAt==='string'&&!Number.isNaN(Date.parse(x.sentAt))?x.sentAt:null,sentPrice:x.sent===true&&validMoney(x.sentPrice)?Number(x.sentPrice):null,paid:x.sent===true&&x.paid===true,paidAt:x.sent===true&&x.paid===true&&typeof x.paidAt==='string'&&!Number.isNaN(Date.parse(x.paidAt))?x.paidAt:null,expiry:validDay(x.expiry)?x.expiry:'',maxUses:positive(x.maxUses),usedCount:nonneg(x.usedCount)}});const cats=[...new Set([...data.categories,...imported.map(x=>x.category)])];if(!confirm(`Nhập ${imported.length} mã và ${cats.length} phân loại? Dữ liệu hiện tại sẽ được THAY THẾ. Hãy xuất backup trước khi tiếp tục.`))return;const oldItems=items,oldCats=categories,oldStatuses=[...customStatuses],oldPrices={...prices};prices={...DEFAULT_PRICES};if(data.prices&&typeof data.prices==='object'&&!Array.isArray(data.prices))for(const [k,v] of Object.entries(data.prices))if(k.length<=65&&validMoney(v))prices[k]=Number(v);customStatuses=Array.isArray(data.customStatuses)?data.customStatuses.filter(c=>typeof c==='string'&&c.length<=36).slice(0,100):[...new Set(imported.map(x=>x.customStatus).filter(x=>typeof x==='string'&&x.length<=36))];items=imported;categories=cats.length?cats:['50','100','200'];if(!persist()){items=oldItems;categories=oldCats;customStatuses=oldStatuses;prices=oldPrices;return}selected.clear();selectMode=false;checkSession=null;persistCheckSession();updateCats();render();notify(`Đã khôi phục ${items.length} mã`)}catch{notify('File backup không hợp lệ. Dữ liệu hiện tại được giữ nguyên')}};
-$('pasteBtn').onclick=()=>{$('pasteCodes').value='';$('pasteExpiry').value='';$('pasteMaxUses').value='';$('pasteDialog').showModal();$('pasteCodes').focus()};
+$('pasteBtn').onclick=()=>{$('pasteCodes').value='';$('pasteExpiry').value='';$('pasteDialog').showModal();$('pasteCodes').focus()};
 $('categoryBtn').onclick=()=>{renderCategoryList();$('categoryDialog').showModal()};document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>$(b.dataset.close).close());
 $('createCategory').onclick=()=>{const c=$('newCategory').value.trim();if(!c)return notify('Nhập tên phân loại');if(c.length>60)return notify('Tên phân loại tối đa 60 ký tự');if(categories.some(x=>x.toLowerCase()===c.toLowerCase()))return notify('Phân loại đã tồn tại');categories.push(c);if(!persist()){categories.pop();return}$('newCategory').value='';updateCats();renderCategoryList();notify('Đã thêm phân loại')};
 $('categoryList').onclick=e=>{const b=e.target.closest('[data-category-delete]');if(!b)return;const c=b.dataset.categoryDelete,n=items.filter(x=>x.category===c).length;if(n&&!confirm(`Loại ${c} có ${n} mã. Xóa phân loại nhưng GIỮ LẠI các mã dưới dạng chưa phân loại?`))return;if(!n&&!confirm(`Xóa phân loại ${c}?`))return;const oldItems=items.map(x=>({...x})),oldCats=[...categories];items.forEach(x=>{if(x.category===c)x.category='Chưa phân loại'});categories=categories.filter(x=>x!==c);if(!categories.includes('Chưa phân loại')&&items.some(x=>x.category==='Chưa phân loại'))categories.push('Chưa phân loại');if(!persist()){items=oldItems;categories=oldCats;return}selected.clear();updateCats();renderCategoryList();render()};
-$('pasteForm').onsubmit=e=>{e.preventDefault();const category=$('pasteCategory').value;const codes=$('pasteCodes').value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);if(!category||!codes.length)return notify('Chọn phân loại và dán mã');const expiry=$('pasteExpiry').value;const useRaw=$('pasteMaxUses').value;if(expiry&&!validDay(expiry))return notify('Ngày hết hạn không hợp lệ');if(useRaw&&positive(useRaw)===null)return notify('Tổng lượt phải từ 1 đến 1.000.000');const seen=new Set(items.filter(x=>x.category===category).map(x=>String(x.code).toLowerCase()));const priorLen=items.length;let added=0,duplicates=0;for(const code of codes){if(code.length>160){duplicates++;continue}const key=code.toLowerCase();if(seen.has(key)){duplicates++;continue}seen.add(key);items.push({id:uid(),category,name:category,code,used:false,created:Date.now(),expiry,maxUses:positive(useRaw),usedCount:0});added++}if(!persist()){items.length=priorLen;render();return}render();$('pasteDialog').close();notify(`Đã thêm ${added} mã${duplicates?', bỏ qua '+duplicates+' dòng trùng/không hợp lệ':''}`);if(added&&confirm(`Đã thêm ${added} mã. Bắt đầu kiểm tra trên ShopeeFood?\nBạn sẽ xác nhận kết quả từng mã, không tự đặt hàng.`))startCheck(items.slice(-added).map(x=>String(x.id)))};
-['search','filter','sort','categoryFilter'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',()=>{selected.clear();render()}));
+$('pasteForm').onsubmit=e=>{e.preventDefault();const category=$('pasteCategory').value;const codes=$('pasteCodes').value.trim().split(/\s+/u).filter(Boolean);if(!category||!codes.length)return notify('Chọn phân loại và dán mã');const expiry=$('pasteExpiry').value;if(expiry&&!validDay(expiry))return notify('Ngày hết hạn không hợp lệ');const seen=new Set(items.filter(x=>x.category===category).map(x=>String(x.code).toLowerCase()));let skipped=0;const batch=[];for(const code of codes){const key=code.toLowerCase();if(code.length>160||seen.has(key)){skipped++;continue}seen.add(key);batch.push({id:uid(),category,name:category,code,used:false,created:Date.now(),expiry,maxUses:null,usedCount:0})}if(!batch.length)return notify('Không có mã mới hợp lệ');$('pasteDialog').close();if(expiry){items.push(...batch);if(!persist()){items.splice(-batch.length);return}render();notify(`Đã lưu ${batch.length} mã${skipped?' · bỏ qua '+skipped+' mã trùng':''}`)}else{pendingCodes=batch.map(x=>({...x,keep:true}));startCheck(pendingCodes.map(x=>String(x.id)));notify(`Đã nhận ${batch.length} mã. Kiểm tra rồi chọn mã để lưu`)}};
+$('filter').addEventListener('change',()=>{$('sort').value='expiry'});['search','filter','sort','categoryFilter'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',()=>{selected.clear();render()}));
 function copied(s,count){try{if(window.AndroidFiles?.copyText){window.AndroidFiles.copyText(s);notify('Đã gửi '+count+' mã vào bộ nhớ sao chép');return}if(navigator.clipboard?.writeText){navigator.clipboard.writeText(s).then(()=>notify('Đã sao chép '+count+' mã')).catch(()=>fallbackCopy(s,count));return}fallbackCopy(s,count)}catch{notify('Không sao chép được')}}
 function fallbackCopy(s,count){try{const t=document.createElement('textarea');t.value=s;t.style.position='fixed';t.style.opacity='0';document.body.append(t);t.select();const ok=document.execCommand('copy');t.remove();notify(ok?'Đã sao chép '+count+' mã':'Không sao chép được')}catch{notify('Không sao chép được')}}
 $('selectionMode').onclick=()=>{selectMode=!selectMode;selected.clear();render()};
@@ -649,7 +650,7 @@ $('deleteSelected').onclick=()=>{const a=getCurrentSelection();if(!a.length)retu
 
 // V6.13: supervised check queue. No background automation or third-party screen scraping.
 function startCheck(ids){
- const unique=[...new Set(ids.map(String))].filter(id=>items.some(x=>String(x.id)===id));
+ const unique=[...new Set(ids.map(String))].filter(id=>items.some(x=>String(x.id)===id)||(pendingCodes||[]).some(x=>String(x.id)===id));
  if(!unique.length)return notify('Không có mã để kiểm tra');
  if(unique.length>500)return notify('Tối đa 500 mã mỗi đợt');
  if(checkSession&&checkSession.index<checkSession.ids.length&&!confirm('Đang có đợt kiểm tra chưa xong. Thay bằng danh sách mới?'))return;
@@ -657,10 +658,10 @@ function startCheck(ids){
 }
 function currentCheckItem(){
  if(!checkSession)return null;
- while(checkSession.index<checkSession.ids.length){const x=items.find(y=>String(y.id)===checkSession.ids[checkSession.index]);if(x)return x;checkSession.index++}
+ while(checkSession.index<checkSession.ids.length){const x=items.find(y=>String(y.id)===checkSession.ids[checkSession.index])||(pendingCodes||[]).find(y=>String(y.id)===checkSession.ids[checkSession.index]);if(x)return x;checkSession.index++}
  return null;
 }
-function finishChecks(){checkSession=null;persistCheckSession();if($('checkDialog').open)$('checkDialog').close();render()}
+function finishChecks(){if(pendingCodes&&pendingCodes.length){const box=$('pendingPick');box.style.display='block';box.innerHTML='<b>Chọn các mã muốn lưu</b><p class="hint">Bỏ chọn mã không muốn thêm vào kho.</p>'+pendingCodes.map((x,i)=>`<label style="display:flex;gap:9px;align-items:center;margin:9px 0"><input type="checkbox" data-pending="${i}" ${x.keep?'checked':''} style="width:auto">${esc(x.code)} · ${esc(x.expiry||'Chưa rõ hạn')} ${esc(CHECK_LABELS[x.checkResult]||'')}</label>`).join('')+'<button class="btn primary" type="button" id="commitPending">Lưu mã đã chọn</button><button class="btn" type="button" id="discardPending">Hủy đợt nhập</button>';$('checkProgress').textContent='Hoàn tất kiểm tra';$('checkSaveNext').style.display='none';$('checkSkip').style.display='none';$('checkFinish').style.display='none';if(!$('checkDialog').open)$('checkDialog').showModal();return}checkSession=null;persistCheckSession();if($('checkDialog').open)$('checkDialog').close();render()}
 function showCheck(){
  const x=currentCheckItem();if(!x){finishChecks();return}
  persistCheckSession();
@@ -669,8 +670,8 @@ function showCheck(){
  $('checkCategoryText').textContent=formatCategory(x);
  $('checkResult').value=CHECK_LABELS[x.checkResult]?x.checkResult:'';
  $('checkExpiry').value=validDay(x.checkVerifiedExpiry)?x.checkVerifiedExpiry:'';
- $('checkApplyExpiry').value='no';
- $('checkNote').value=String(x.checkNote||'').slice(0,300);
+ $('checkApplyAll').checked=false;
+ 
  const history=Array.isArray(x.checkHistory)?x.checkHistory.slice(-4).reverse():[];
  $('checkHistory').innerHTML=history.length?'<b>Lịch sử ghi nhận gần đây:</b> '+history.map(h=>`${esc(h.at?new Date(h.at).toLocaleString('vi-VN'):'')} — ${esc(CHECK_LABELS[h.result]||'Chưa rõ')}`).join('<span style="color:#aab2c0"> · </span>'):'Chưa có lịch sử kiểm tra';
  if(!$('checkDialog').open)$('checkDialog').showModal();
@@ -686,20 +687,21 @@ $('checkOpenFood').onclick=()=>{
  copied(String(x.code),1);
  if(window.AndroidFiles?.openExternal)window.AndroidFiles.openExternal('https://shopeefood.vn/');else notify('Đã copy mã. Mở ShopeeFood để thử mã rồi quay lại ghi nhận');
 };
+$('pendingPick').addEventListener('change',e=>{const i=Number(e.target.dataset.pending);if(pendingCodes&&Number.isInteger(i)&&pendingCodes[i])pendingCodes[i].keep=e.target.checked});
+$('pendingPick').addEventListener('click',e=>{if(e.target.id==='discardPending'){pendingCodes=null;checkSession=null;persistCheckSession();$('checkDialog').close();notify('Đã hủy đợt nhập');return}if(e.target.id==='commitPending'&&pendingCodes){const add=pendingCodes.filter(x=>x.keep).map(({keep,...x})=>x);items.push(...add);if(!persist()){items.splice(-add.length);return}pendingCodes=null;checkSession=null;persistCheckSession();$('checkDialog').close();$('checkSaveNext').style.display='';$('checkSkip').style.display='';$('checkFinish').style.display='';render();notify('Đã lưu '+add.length+' mã được chọn')}});
 $('checkSkip').onclick=()=>{if(!checkSession)return;stepCheck()};
-$('checkFinish').onclick=()=>{if(confirm('Kết thúc kiểm tra? Các kết quả đã lưu vẫn được giữ.'))finishChecks()};
+$('checkFinish').onclick=()=>{if(pendingCodes){finishChecks();return}if(confirm('Kết thúc kiểm tra? Các kết quả đã lưu vẫn được giữ.'))finishChecks()};
 $('checkSaveNext').onclick=()=>{
  const x=currentCheckItem();if(!x)return;
  const result=$('checkResult').value;if(!Object.prototype.hasOwnProperty.call(CHECK_LABELS,result))return notify('Vui lòng chọn kết quả đã thấy trên ShopeeFood');
- const expiry=$('checkExpiry').value,apply=$('checkApplyExpiry').value==='yes';
+ const expiry=$('checkExpiry').value,apply=$('checkApplyAll').checked;
  if(expiry&&!validDay(expiry))return notify('Ngày hết hạn không hợp lệ');
- if(apply&&(!expiry||!validDay(expiry)))return notify('Nhập ngày HSD hợp lệ trước khi cập nhật');
+ if(apply&&(!expiry||!validDay(expiry)))return notify('Nhập ngày HSD hợp lệ trước khi áp dụng');
  const old={checkResult:x.checkResult,checkAt:x.checkAt,checkNote:x.checkNote,checkVerifiedExpiry:x.checkVerifiedExpiry,checkHistory:x.checkHistory,expiry:x.expiry};
- x.checkResult=result;x.checkAt=new Date().toISOString();x.checkNote=$('checkNote').value.trim().slice(0,300);x.checkVerifiedExpiry=expiry||'';
+ x.checkResult=result;x.checkAt=new Date().toISOString();x.checkVerifiedExpiry=expiry||'';
  const history=Array.isArray(x.checkHistory)?x.checkHistory.slice(-29):[];
- x.checkHistory=[...history,{result,at:x.checkAt,note:x.checkNote,expiry:x.checkVerifiedExpiry}];
- if(apply)x.expiry=expiry;
- if(!persist()){Object.assign(x,old);return}
+ x.checkHistory=[...history,{result,at:x.checkAt,note:"",expiry:x.checkVerifiedExpiry}];
+ if(expiry)x.expiry=expiry;if(apply&&pendingCodes)pendingCodes.forEach(y=>y.expiry=expiry);if(!pendingCodes&&!persist()){Object.assign(x,old);return}
  stepCheck();
 };
 
