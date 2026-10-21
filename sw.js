@@ -1,4 +1,4 @@
-const CACHE='shopeefood-iphone-v616-r1';
+const CACHE='shopeefood-iphone-v617-r1';
 const SHELL=['./','./index.html','./logo.png','./icon-192.png','./icon-512.png','./apple-touch-icon.png','./manifest.webmanifest'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()));
