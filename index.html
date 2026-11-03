@@ -796,6 +796,57 @@ dialog::backdrop{background:#131c2b9a;backdrop-filter:blur(3px)}
 .voucher .actions{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
 .voucher .actions .btn{min-width:0;padding:10px 3px;font-size:clamp(9px,2.35vw,12px);white-space:normal;line-height:1.25}
 @media(max-width:390px){.voucher .actions{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* V6.21.1 — balanced iPhone layout, presentation only */
+@media(max-width:699px){
+ .voucher .actions{
+   display:grid!important;
+   grid-template-columns:repeat(6,minmax(0,1fr))!important;
+   gap:8px!important;
+   align-items:stretch!important;
+ }
+ .voucher .actions > .btn{
+   grid-column:span 2;
+   width:100%!important;
+   min-width:0!important;
+   min-height:44px!important;
+   padding:9px 5px!important;
+   font-size:clamp(11px,2.8vw,13px)!important;
+   line-height:1.25!important;
+   white-space:normal!important;
+   overflow-wrap:anywhere;
+ }
+ .voucher .actions > .btn:nth-child(4),
+ .voucher .actions > .btn:nth-child(5){grid-column:span 3}
+ .voucher .actions > .btn:only-child{grid-column:1/-1}
+ .voucher .actions > .btn:nth-last-child(2):first-child,
+ .voucher .actions > .btn:nth-last-child(2):first-child + .btn{grid-column:span 3}
+ .bulk-drawer .sent-bulk-controls{
+   display:grid!important;
+   grid-template-columns:repeat(2,minmax(0,1fr))!important;
+   gap:9px!important;
+ }
+ .bulk-drawer .sent-bulk-controls > .btn{
+   width:100%!important;
+   min-width:0!important;
+   min-height:44px!important;
+   padding:9px 7px!important;
+   font-size:12px!important;
+   line-height:1.3!important;
+   white-space:normal!important;
+ }
+ .bulk-drawer .sent-bulk-controls > .btn:last-child:nth-child(odd){grid-column:1/-1}
+ .sent-foot{display:grid!important;gap:10px!important}
+ .sent-foot > div{display:flex!important;flex-wrap:wrap!important;gap:8px!important}
+ .sent-foot .btn{min-height:40px!important;padding:8px 10px!important;font-size:12px!important}
+ .sent-foot .sent-pick{display:inline-flex!important;align-items:center!important;gap:6px!important}
+ .sent-entry{min-width:0!important}
+ .sent-entry strong{overflow-wrap:anywhere}
+}
+@media(max-width:370px){
+ .voucher .actions > .btn{font-size:11px!important}
+ .bulk-drawer .sent-bulk-controls > .btn{font-size:11px!important}
+}
 </style></head><body>
 <script>
 /* V6.18.1: Safari may disregard viewport zoom restrictions. Block multi-touch pinch
